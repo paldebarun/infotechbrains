@@ -7,7 +7,8 @@ import { FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="bg-gray-900">
+    
+    <div className="bg-gray-900 overflow-x-hidden">
       <div className="w-screen bg-gray-800 flex justify-center flex-col md:flex-row gap-[70px] md:gap-[80px]  px-[10px] sm:px-[30px] lg:px-[100px] py-[100px] ">
         <div className="w-full md:w-[50%]  flex   flex-col md:justify-end  gap-[40px]">
           <div className="text-white flex gap-[10px] items-center  ">
@@ -155,60 +156,68 @@ const Footer = () => {
           <div className="flex justify-between md:gap-[50px] md:w-auto w-full">
             <div className="flex flex-col gap-[20px]">
               <div className="text-white text-[20px] font-bold">Global</div>
-              <div className="flex flex-col gap-[30px]">
+              <ul className="flex flex-col gap-[30px]">
                 {footerdata.Globaldata.map((data, index) => (
-                  <div
-                    className="text-white hover:text-gray-400  transition-colors duration-200 cursor-pointer"
-                    key={index}
+                  <li key={index}>
+                  <a href="#globalrefs"
+                    className="text-white hover:text-gray-400  transition-colors duration-200 "
+                    
                   >
                     {data}
-                  </div>
+                  </a>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
 
             <div className="flex flex-col gap-[20px]">
               <div className="text-white text-[20px] font-bold">Technology</div>
-              <div className="flex flex-col gap-[30px]">
+              <ul className="flex flex-col gap-[30px]">
                 {footerdata.Technologydata.map((data, index) => (
-                  <div
-                    className="text-white hover:text-gray-400 cursor-pointer transition-colors duration-200"
-                    key={index}
+                  <li key={index}>
+                  <a href="#technrefs"
+                    className="text-white hover:text-gray-400  transition-colors duration-200"
+                    
                   >
                     {data}
-                  </div>
+                  </a>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           </div>
 
           <div className="flex justify-between md:gap-[50px] md:w-auto w-full">
             <div className="flex flex-col gap-[20px]">
               <div className="text-white text-[20px] font-bold">Services</div>
-              <div className="flex flex-col gap-[30px]">
+              <ul className="flex flex-col gap-[30px]">
                 {footerdata.Servicedata.map((data, index) => (
-                  <div
-                    className="text-white hover:text-gray-400 cursor-pointer transition-colors duration-200"
-                    key={index}
+                  <li key={index}>
+                  <a href="#servicerefs"
+                    className="text-white hover:text-gray-400  transition-colors duration-200"
+                    
                   >
                     {data}
-                  </div>
+                  </a>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
 
             <div className="flex flex-col gap-[20px]">
               <div className="text-white text-[20px] font-bold">Build</div>
-              <div className="flex flex-col gap-[30px]">
+              <ul className="flex flex-col gap-[30px]">
                 {footerdata.Buildata.map((data, index) => (
-                  <div
+                  <li key={index}>
+                  <a href="#buildrefs"
                     className="text-white cursor-pointer  hover:text-gray-400 transition-colors duration-200"
-                    key={index}
+                    
                   >
                     {data}
-                  </div>
+                  </a>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           </div>
         </div>
@@ -237,9 +246,12 @@ const Footer = () => {
           </div>
 
           <div className="flex gap-[10px] items-center justify-center">
-            <FaLinkedin className="text-gray-400 w-[24px] h-[24px] hover:text-red-500 transition-colors duration-200 cursor-pointer" />
-            <IoLogoFacebook className="text-gray-400 w-[24px] h-[24px] hover:text-red-500 transition-colors duration-200 cursor-pointer" />
-            <FaYoutube className="text-gray-400 w-[24px] h-[24px] hover:text-red-500 transition-colors duration-200 cursor-pointer" />
+          <a href="#linkedin"> <FaLinkedin className="text-gray-400 w-[24px] h-[24px] hover:text-red-500 transition-colors duration-200 " /></a>
+            <a href="#facebook"><IoLogoFacebook className="text-gray-400 w-[24px] h-[24px] hover:text-red-500 transition-colors duration-200 " /></a>
+            <a href="#youtube">
+            <FaYoutube className="text-gray-400 w-[24px] h-[24px] hover:text-red-500 transition-colors duration-200 " />
+            </a>
+            
           </div>
         </div>
       </div>
