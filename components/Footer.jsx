@@ -155,7 +155,7 @@ const Footer = () => {
         <div className="flex lg:flex-row flex-col gap-[70px] ">
           <div className="flex justify-between md:gap-[50px] md:w-auto w-full">
             <div className="flex flex-col gap-[20px]">
-              <div className="text-white text-[20px] font-bold">Global</div>
+              <p className="text-white text-[20px] font-bold">Global</p>
               <ul className="flex flex-col gap-[30px]">
                 {footerdata.Globaldata.map((data, index) => (
                   <li key={index}>
@@ -171,7 +171,7 @@ const Footer = () => {
             </div>
 
             <div className="flex flex-col gap-[20px]">
-              <div className="text-white text-[20px] font-bold">Technology</div>
+              <p className="text-white text-[20px] font-bold">Technology</p>
               <ul className="flex flex-col gap-[30px]">
                 {footerdata.Technologydata.map((data, index) => (
                   <li key={index}>
@@ -189,7 +189,7 @@ const Footer = () => {
 
           <div className="flex justify-between md:gap-[50px] md:w-auto w-full">
             <div className="flex flex-col gap-[20px]">
-              <div className="text-white text-[20px] font-bold">Services</div>
+              <p className="text-white text-[20px] font-bold">Services</p>
               <ul className="flex flex-col gap-[30px]">
                 {footerdata.Servicedata.map((data, index) => (
                   <li key={index}>
@@ -205,12 +205,12 @@ const Footer = () => {
             </div>
 
             <div className="flex flex-col gap-[20px]">
-              <div className="text-white text-[20px] font-bold">Build</div>
+              <p className="text-white text-[20px] font-bold">Build</p>
               <ul className="flex flex-col gap-[30px]">
                 {footerdata.Buildata.map((data, index) => (
                   <li key={index}>
                   <a href="#buildrefs"
-                    className="text-white cursor-pointer  hover:text-gray-400 transition-colors duration-200"
+                    className="text-white   hover:text-gray-400 transition-colors duration-200"
                     
                   >
                     {data}
