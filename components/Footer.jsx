@@ -12,41 +12,47 @@ const Footer = () => {
       <div className="w-screen bg-gray-800 flex justify-center flex-col md:flex-row gap-[70px] md:gap-[80px]  px-[10px] sm:px-[30px] lg:px-[100px] py-[100px] ">
         <div className="w-full md:w-[50%]  flex   flex-col md:justify-end  gap-[40px]">
           <div className="text-white flex gap-[10px] items-center  ">
-            <Image
+          <figure>
+          <Image
               width={20}
               height={20}
               alt="logo png"
               src="/images/logo.png"
             />
+          </figure>
+            
             <div className="text-xl">alter.io</div>
           </div>
 
-          <div className="text-white text-5xl lg:text-6xl font-bold">
-            Let&apos;s talk about your projects
-          </div>
-          <div className="border-pink-500 hover:bg-pink-500 transition-colors duration-200 cursor-pointer w-[200px] flex items-center justify-center border-4 text-white rounded-full py-[15px]">
-            schedule a call
-          </div>
+          <p className="text-white text-5xl lg:text-6xl font-bold">
+            Let&apos;s talk about <br/> your projects
+          </p>
+          <a href="#schedule-a-call-ref" className="border-pink-500 hover:bg-pink-500 transition-colors duration-200  w-[200px] flex items-center justify-center border-4 text-white rounded-full py-[15px]">
+            <span>schedule a call</span>
+          </a>
 
-          <div>
+          <figure>
             <Image
               width={200}
               height={200}
               alt="footer image"
               src="/images/foooterimage.png"
             />
-          </div>
+          </figure>
         </div>
 
         <div className="flex flex-col  justify-start items-start md:justify-end gap-[50px] lg:gap-[50px] md:gap-[30px]">
           <div className="flex flex-col  md:flex-row gap-[20px] items-start md:items-end">
-            <Image
+          <figure>
+          <Image
               width={120}
               height={120}
               alt="footer image 2"
               src="/images/footerimage2.png"
               className=""
             />
+          </figure>
+            
             <div>
               <div className="flex flex-col gap-[20px]">
                 <div className="text-white text-xl font-bold">Lisbon</div>
@@ -73,13 +79,16 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col md:flex-row gap-[20px] items-start md:items-end">
-            <Image
+          <figure>
+          <Image
               width={120}
               height={120}
               alt="footer image 3"
               src="/images/footerimage3.png"
               className=""
             />
+          </figure>
+            
             <div>
               <div className="flex flex-col gap-[20px]">
                 <div className="text-white text-xl font-bold">London</div>
@@ -106,13 +115,16 @@ const Footer = () => {
           </div>
 
           <div className="flex gap-[20px] flex-col md:flex-row items-start  md:items-end">
-            <Image
+          <figure>
+          <Image
               width={120}
               height={250}
               alt="footer image 5"
               src="/images/footerimage4.png"
               className=""
             />
+          </figure>
+            
             <div>
               <div className="flex flex-col gap-[20px]">
                 <div className="text-white text-xl font-bold">MILAN</div>
@@ -143,13 +155,16 @@ const Footer = () => {
 
       <div className="bg-gray-900 flex lg:flex-row flex-col md:justify-center gap-[70px] px-[20px] lg:px-[100px] py-[100px]">
         <a href="/">
-          <Image
+        <figure>
+        <Image
             width={60}
             alt="footer image 2"
             height={70}
             src="/images/logo.png"
             className="w-[60px] h-[70px]"
           />
+        </figure>
+         
         </a>
 
         <div className="flex lg:flex-row flex-col gap-[70px] ">
@@ -159,11 +174,11 @@ const Footer = () => {
               <ul className="flex flex-col gap-[30px]">
                 {footerdata.Globaldata.map((data, index) => (
                   <li key={index}>
-                  <a href="#globalrefs"
+                  <a href={data.url}
                     className="text-white hover:text-gray-400  transition-colors duration-200 "
                     
                   >
-                    {data}
+                    {data.text}
                   </a>
                   </li>
                 ))}
@@ -175,11 +190,11 @@ const Footer = () => {
               <ul className="flex flex-col gap-[30px]">
                 {footerdata.Technologydata.map((data, index) => (
                   <li key={index}>
-                  <a href="#technrefs"
+                  <a href={data.url}
                     className="text-white hover:text-gray-400  transition-colors duration-200"
                     
                   >
-                    {data}
+                    {data.text}
                   </a>
                   </li>
                 ))}
@@ -193,11 +208,11 @@ const Footer = () => {
               <ul className="flex flex-col gap-[30px]">
                 {footerdata.Servicedata.map((data, index) => (
                   <li key={index}>
-                  <a href="#servicerefs"
+                  <a href={data.url}
                     className="text-white hover:text-gray-400  transition-colors duration-200"
                     
                   >
-                    {data}
+                    {data.text}
                   </a>
                   </li>
                 ))}
@@ -209,11 +224,11 @@ const Footer = () => {
               <ul className="flex flex-col gap-[30px]">
                 {footerdata.Buildata.map((data, index) => (
                   <li key={index}>
-                  <a href="#buildrefs"
+                  <a href={data.url}
                     className="text-white   hover:text-gray-400 transition-colors duration-200"
                     
                   >
-                    {data}
+                    {data.text}
                   </a>
                   </li>
                 ))}
@@ -246,7 +261,8 @@ const Footer = () => {
           </div>
 
           <div className="flex gap-[10px] items-center justify-center">
-          <a href="#linkedin"> <FaLinkedin className="text-gray-400 w-[24px] h-[24px] hover:text-red-500 transition-colors duration-200 " /></a>
+          <a href="#linkedin"> 
+          <FaLinkedin className="text-gray-400 w-[24px] h-[24px] hover:text-red-500 transition-colors duration-200 " /></a>
             <a href="#facebook"><IoLogoFacebook className="text-gray-400 w-[24px] h-[24px] hover:text-red-500 transition-colors duration-200 " /></a>
             <a href="#youtube">
             <FaYoutube className="text-gray-400 w-[24px] h-[24px] hover:text-red-500 transition-colors duration-200 " />

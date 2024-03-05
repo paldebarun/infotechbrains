@@ -2,35 +2,65 @@
 export const footerdata={ 
 Globaldata:[
 
-    "Work",
-    "About us",
-    "Blog",
-    "Newsletter",
-    "News",
-    "careers"
+    {text:"Work",
+     url:"#work-ref"
+},
+   { text:"About us",
+     url:"#About_us-ref"
+},
+   { text:"Blog",
+     url:"#blog-ref"
+},
+   { text:"Newsletter",
+     url:"#newsletter-ref"
+},
+    {text:"News",
+     url:"#news-ref"
+},
+   { text:"careers",
+    url:"#careers-ref"
+}
 
 ],
 
 Technologydata:[
 
-    "Tech",
-    "Open Source"
+    {text:"Tech",
+     url:"#tech-ref"
+},
+    {text:"Open Source",
+     url:"#open_source-ref"
+}
 
 ],
 
 Servicedata:[
 
-    "Product Scope",
-    "UX/UI",
-    "MVP Builder",
-    "Dedicated Teams",
-    "Custom Software Development"
+    {text:"Product Scope",
+     url:"#product_scope-ref"
+},
+    {text:"UX/UI",
+     url:"#ux/ui-ref"
+},
+    {text:"MVP Builder",
+     url:"#mvp_builder-ref"
+},
+    {text:"Dedicated Teams",
+     url:"#dedicated_teams-ref"
+},
+    {text:"Custom Software Development",
+     url:"#custom-ref"
+}
 
 ],
 
 Buildata:[
-"Play with Pricing",
-"Book a Call"
+{text:"Play with Pricing",
+ url:"#play-ref"
+},
+{text:"Book a Call",
+ url:"#book-ref"
+}
 
 ]
 
