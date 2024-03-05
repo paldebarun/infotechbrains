@@ -66,16 +66,16 @@ const Footer = () => {
 
               <div className="text-white flex items-center sm:text-md text-[12px]">
                 <div>Phone:</div>
-                <div className="text-pink-500 hover:text-slate-500 cursor-pointer">
+                <a href="tel:+351930944995" className="text-pink-500 hover:text-slate-500 cursor-pointer">
                   +351 930944995
-                </div>
+                </a>
               </div>
 
               <div className="text-white flex items-center gap-[5px] sm:text-md text-[12px]">
                 <div>Email:</div>
-                <div className="text-pink-500 hover:text-slate-500 cursor-pointer">
+                <a href="mailto:lisbon@altar.io" className="text-pink-500 hover:text-slate-500 cursor-pointer">
                   lisbon@altar.io
-                </div>
+                </a>
               </div>
             </div>
           </div>
@@ -102,16 +102,16 @@ const Footer = () => {
 
               <div className="text-white flex items-center sm:text-md text-[12px]">
                 <div>Phone:</div>
-                <div className="text-pink-500 hover:text-slate-500 cursor-pointer">
+                <a href="tel:+447802685611" className="text-pink-500 hover:text-slate-500 cursor-pointer">
                   +44 7802685611
-                </div>
+                </a>
               </div>
 
               <div className="text-white flex items-center gap-[5px] sm:text-md text-[12px]">
                 <div>Email:</div>
-                <div className="text-pink-500 hover:text-slate-500 cursor-pointer">
+                <a href="mailto:london@altar.io" className="text-pink-500 hover:text-slate-500 cursor-pointer">
                   london@altar.io
-                </div>
+                </a>
               </div>
             </div>
           </div>
@@ -138,17 +138,17 @@ const Footer = () => {
 
               <div className="text-white flex items-center sm:text-md text-[12px]">
                 <div>Phone:</div>
-                <div className="text-pink-500 hover:text-slate-500 cursor-pointer">
+                <a href="tel:+393318853562" className="text-pink-500 hover:text-slate-500 cursor-pointer">
                   +39 3318853562
-                </div>
+                </a>
               </div>
 
               <div className="text-white flex items-center gap-[5px] sm:text-md text-[12px]">
                 <div>Email:</div>
-                <div className="text-pink-500 hover:text-slate-500 cursor-pointer">
+                <a href="mailto:milan@altar.io" className="text-pink-500 hover:text-slate-500 cursor-pointer">
                   {" "}
                   milan@altar.io
-                </div>
+                </a>
               </div>
             </div>
           </div>
