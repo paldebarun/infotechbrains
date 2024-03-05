@@ -7,27 +7,29 @@ import { FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    
     <div className="bg-gray-900 overflow-x-hidden">
       <div className="w-screen bg-gray-800 flex justify-center flex-col md:flex-row gap-[70px] md:gap-[80px]  px-[10px] sm:px-[30px] lg:px-[100px] py-[100px] ">
         <div className="w-full md:w-[50%]  flex   flex-col md:justify-end  gap-[40px]">
           <div className="text-white flex gap-[10px] items-center  ">
-          <figure>
-          <Image
-              width={20}
-              height={20}
-              alt="logo png"
-              src="/images/logo.png"
-            />
-          </figure>
-            
+            <figure>
+              <Image
+                width={20}
+                height={20}
+                alt="logo png"
+                src="/images/logo.png"
+              />
+            </figure>
+
             <div className="text-xl">alter.io</div>
           </div>
 
           <p className="text-white text-5xl lg:text-6xl font-bold">
-            Let&apos;s talk about <br/> your projects
+            Let&apos;s talk about <br /> your projects
           </p>
-          <a href="#schedule-a-call-ref" className="border-pink-500 hover:bg-pink-500 transition-colors duration-200  w-[200px] flex items-center justify-center border-4 text-white rounded-full py-[15px]">
+          <a
+            href="#schedule-a-call-ref"
+            className="border-pink-500 hover:bg-pink-500 transition-colors duration-200  w-[200px] flex items-center justify-center border-4 text-white rounded-full py-[15px]"
+          >
             <span>schedule a call</span>
           </a>
 
@@ -43,16 +45,16 @@ const Footer = () => {
 
         <div className="flex flex-col  justify-start items-start md:justify-end gap-[50px] lg:gap-[50px] md:gap-[30px]">
           <div className="flex flex-col  md:flex-row gap-[20px] items-start md:items-end">
-          <figure>
-          <Image
-              width={120}
-              height={120}
-              alt="footer image 2"
-              src="/images/footerimage2.png"
-              className=""
-            />
-          </figure>
-            
+            <figure>
+              <Image
+                width={120}
+                height={120}
+                alt="footer image 2"
+                src="/images/footerimage2.png"
+                className=""
+              />
+            </figure>
+
             <div>
               <div className="flex flex-col gap-[20px]">
                 <div className="text-white text-xl font-bold">Lisbon</div>
@@ -79,16 +81,16 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col md:flex-row gap-[20px] items-start md:items-end">
-          <figure>
-          <Image
-              width={120}
-              height={120}
-              alt="footer image 3"
-              src="/images/footerimage3.png"
-              className=""
-            />
-          </figure>
-            
+            <figure>
+              <Image
+                width={120}
+                height={120}
+                alt="footer image 3"
+                src="/images/footerimage3.png"
+                className=""
+              />
+            </figure>
+
             <div>
               <div className="flex flex-col gap-[20px]">
                 <div className="text-white text-xl font-bold">London</div>
@@ -115,16 +117,16 @@ const Footer = () => {
           </div>
 
           <div className="flex gap-[20px] flex-col md:flex-row items-start  md:items-end">
-          <figure>
-          <Image
-              width={120}
-              height={250}
-              alt="footer image 5"
-              src="/images/footerimage4.png"
-              className=""
-            />
-          </figure>
-            
+            <figure>
+              <Image
+                width={120}
+                height={250}
+                alt="footer image 5"
+                src="/images/footerimage4.png"
+                className=""
+              />
+            </figure>
+
             <div>
               <div className="flex flex-col gap-[20px]">
                 <div className="text-white text-xl font-bold">MILAN</div>
@@ -155,16 +157,15 @@ const Footer = () => {
 
       <div className="bg-gray-900 flex lg:flex-row flex-col md:justify-center gap-[70px] px-[20px] lg:px-[100px] py-[100px]">
         <a href="/">
-        <figure>
-        <Image
-            width={60}
-            alt="footer image 2"
-            height={70}
-            src="/images/logo.png"
-            className="w-[60px] h-[70px]"
-          />
-        </figure>
-         
+          <figure>
+            <Image
+              width={60}
+              alt="footer image 2"
+              height={70}
+              src="/images/logo.png"
+              className="w-[60px] h-[70px]"
+            />
+          </figure>
         </a>
 
         <div className="flex lg:flex-row flex-col gap-[70px] ">
@@ -174,12 +175,12 @@ const Footer = () => {
               <ul className="flex flex-col gap-[30px]">
                 {footerdata.Globaldata.map((data, index) => (
                   <li key={index}>
-                  <a href={data.url}
-                    className="text-white hover:text-gray-400  transition-colors duration-200 "
-                    
-                  >
-                    {data.text}
-                  </a>
+                    <a
+                      href={data.url}
+                      className="text-white hover:text-gray-400  transition-colors duration-200 "
+                    >
+                      {data.text}
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -190,12 +191,12 @@ const Footer = () => {
               <ul className="flex flex-col gap-[30px]">
                 {footerdata.Technologydata.map((data, index) => (
                   <li key={index}>
-                  <a href={data.url}
-                    className="text-white hover:text-gray-400  transition-colors duration-200"
-                    
-                  >
-                    {data.text}
-                  </a>
+                    <a
+                      href={data.url}
+                      className="text-white hover:text-gray-400  transition-colors duration-200"
+                    >
+                      {data.text}
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -208,12 +209,12 @@ const Footer = () => {
               <ul className="flex flex-col gap-[30px]">
                 {footerdata.Servicedata.map((data, index) => (
                   <li key={index}>
-                  <a href={data.url}
-                    className="text-white hover:text-gray-400  transition-colors duration-200"
-                    
-                  >
-                    {data.text}
-                  </a>
+                    <a
+                      href={data.url}
+                      className="text-white hover:text-gray-400  transition-colors duration-200"
+                    >
+                      {data.text}
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -224,12 +225,12 @@ const Footer = () => {
               <ul className="flex flex-col gap-[30px]">
                 {footerdata.Buildata.map((data, index) => (
                   <li key={index}>
-                  <a href={data.url}
-                    className="text-white   hover:text-gray-400 transition-colors duration-200"
-                    
-                  >
-                    {data.text}
-                  </a>
+                    <a
+                      href={data.url}
+                      className="text-white   hover:text-gray-400 transition-colors duration-200"
+                    >
+                      {data.text}
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -247,27 +248,38 @@ const Footer = () => {
           </div>
 
           <div className="flex gap-[10px] items-center text-gray-500">
-            <div className="text-gray-500 cursor-pointer hover:text-white transition-colors duration-200 text-[10px] sm:text-md">
+            <a
+              href="#privacy-policy-ref"
+              className="text-gray-500  hover:text-white transition-colors duration-200 text-[10px] sm:text-md"
+            >
               Privacy policy
-            </div>
+            </a>
             <div className="text-[10px] sm:text-md">|</div>
-            <div className="text-gray-500 cursor-pointer hover:text-white transition-colors duration-200 text-[10px] sm:text-md">
+            <a
+              href="#security-ref"
+              className="text-gray-500  hover:text-white transition-colors duration-200 text-[10px] sm:text-md"
+            >
               Security
-            </div>
+            </a>
             <div className="text-[10px] sm:text-md">|</div>
-            <div className="text-gray-500 cursor-pointer hover:text-white transition-colors duration-200 text-[10px] sm:text-md">
+            <a
+              href="#term-of-services-ref"
+              className="text-gray-500  hover:text-white transition-colors duration-200 text-[10px] sm:text-md"
+            >
               Terms of services
-            </div>
+            </a>
           </div>
 
           <div className="flex gap-[10px] items-center justify-center">
-          <a href="#linkedin"> 
-          <FaLinkedin className="text-gray-400 w-[24px] h-[24px] hover:text-red-500 transition-colors duration-200 " /></a>
-            <a href="#facebook"><IoLogoFacebook className="text-gray-400 w-[24px] h-[24px] hover:text-red-500 transition-colors duration-200 " /></a>
-            <a href="#youtube">
-            <FaYoutube className="text-gray-400 w-[24px] h-[24px] hover:text-red-500 transition-colors duration-200 " />
+            <a href="#linkedin">
+              <FaLinkedin className="text-gray-400 w-[24px] h-[24px] hover:text-red-500 transition-colors duration-200 " />
             </a>
-            
+            <a href="#facebook">
+              <IoLogoFacebook className="text-gray-400 w-[24px] h-[24px] hover:text-red-500 transition-colors duration-200 " />
+            </a>
+            <a href="#youtube">
+              <FaYoutube className="text-gray-400 w-[24px] h-[24px] hover:text-red-500 transition-colors duration-200 " />
+            </a>
           </div>
         </div>
       </div>
