@@ -4,6 +4,12 @@ import { footerdata } from "../data/footerdata";
 import { IoLogoFacebook } from "react-icons/io5";
 import { FaLinkedin } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
+import londonlight from "../public/images/city-london-light.png" 
+import lisbanlight from "../public/images/city-lisbon-light.png" 
+import milanlight from "../public/images/city-milan-light.png" 
+import logo2 from '../public/images/review-clutch.svg'
+import logo3 from '../public/images/review-pme-22.svg'
+import mainlogo from '../public/images/logoalter.svg'
 
 const Footer = () => {
   return (
@@ -16,7 +22,7 @@ const Footer = () => {
                 width={20}
                 height={20}
                 alt="logo png"
-                src="/images/logo.png"
+                src={mainlogo}
               />
             </figure>
 
@@ -33,13 +39,21 @@ const Footer = () => {
             <span>schedule a call</span>
           </a>
 
-          <figure>
+          <figure className="flex gap-[20px] items-center">
             <Image
-              width={200}
-              height={200}
+              width={100}
+              height={100}
               alt="footer image"
-              src="/images/foooterimage.png"
+              src={logo2}
             />
+
+              <Image
+              width={70}
+              height={70}
+              alt="footer image"
+              src={logo3}
+            />
+
           </figure>
         </div>
 
@@ -50,7 +64,7 @@ const Footer = () => {
                 width={120}
                 height={120}
                 alt="footer image 2"
-                src="/images/footerimage2.png"
+                src={lisbanlight}
                 className=""
               />
             </figure>
@@ -86,7 +100,9 @@ const Footer = () => {
                 width={120}
                 height={120}
                 alt="footer image 3"
-                src="/images/footerimage3.png"
+                src={
+                  londonlight
+                }
                 className=""
               />
             </figure>
@@ -122,7 +138,7 @@ const Footer = () => {
                 width={120}
                 height={250}
                 alt="footer image 5"
-                src="/images/footerimage4.png"
+                src={milanlight}
                 className=""
               />
             </figure>
@@ -159,11 +175,14 @@ const Footer = () => {
         <a href="/">
           <figure>
             <Image
-              width={60}
+              width={50}
+
               alt="footer image 2"
               height={70}
-              src="/images/logo.png"
-              className="w-[60px] h-[70px]"
+              src={
+                mainlogo
+              }
+              className="w-[50px] h-[50px]"
             />
           </figure>
         </a>
@@ -250,21 +269,21 @@ const Footer = () => {
           <div className="flex gap-[10px] items-center text-gray-500">
             <a
               href="#privacy-policy-ref"
-              className="text-gray-500  hover:text-white transition-colors duration-200 text-[10px] sm:text-md"
+              className="text-gray-500  hover:text-white transition-colors duration-200 text-[10px] sm:text-[15px]"
             >
               Privacy policy
             </a>
-            <div className="text-[10px] sm:text-md">|</div>
+            <div className="text-[10px] sm:text-[15px]">|</div>
             <a
               href="#security-ref"
-              className="text-gray-500  hover:text-white transition-colors duration-200 text-[10px] sm:text-md"
+              className="text-gray-500  hover:text-white transition-colors duration-200 text-[10px] sm:text-[15px]"
             >
               Security
             </a>
-            <div className="text-[10px] sm:text-md">|</div>
+            <div className="text-[10px] sm:text-[15px]">|</div>
             <a
               href="#term-of-services-ref"
-              className="text-gray-500  hover:text-white transition-colors duration-200 text-[10px] sm:text-md"
+              className="text-gray-500  hover:text-white transition-colors duration-200 text-[10px] sm:text-[15px]"
             >
               Terms of services
             </a>
