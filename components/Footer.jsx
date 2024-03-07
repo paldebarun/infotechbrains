@@ -14,8 +14,8 @@ import mainlogo from '../public/images/logoalter.svg'
 const Footer = () => {
   return (
     <div className="bg-gray-900 overflow-x-hidden">
-      <div className="w-screen bg-gray-800 flex justify-center flex-col md:flex-row gap-[70px] md:gap-[80px]  px-[10px] sm:px-[30px] lg:px-[100px] py-[100px] ">
-        <div className="w-full md:w-[50%]  flex   flex-col md:justify-end  gap-[40px]">
+      <div className="w-screen bg-gray-800 flex justify-center flex-col md:flex-row gap-[70px] md:gap-[80px]  px-[8px] sm:px-[20px] lg:px-[100px] py-[100px] ">
+        <div className="w-full md:w-[40%]  flex   flex-col md:justify-end  gap-[40px]">
           <div className="text-white flex gap-[10px] items-center  ">
             <figure>
               <Image
@@ -61,8 +61,8 @@ const Footer = () => {
           <div className="flex flex-col  md:flex-row gap-[20px] items-start md:items-end">
             <figure>
               <Image
-                width={120}
-                height={120}
+                width={130}
+                height={130}
                 alt="footer image 2"
                 src={lisbanlight}
                 className=""
@@ -136,7 +136,7 @@ const Footer = () => {
             <figure>
               <Image
                 width={120}
-                height={250}
+                height={120}
                 alt="footer image 5"
                 src={milanlight}
                 className=""
@@ -175,14 +175,13 @@ const Footer = () => {
         <a href="/">
           <figure>
             <Image
-              width={50}
-
+              width={60}
               alt="footer image 2"
               height={70}
               src={
                 mainlogo
               }
-              className="w-[50px] h-[50px]"
+              className="w-[60px] h-[70px]"
             />
           </figure>
         </a>
