@@ -1,4 +1,4 @@
-import Navbar from '@/components/Navbar';
+import {Navbar} from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Hero from '@/components/(pages)/home/Hero'
 export default function Home() {
@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <Navbar />
       <main>
-        <Hero />
+        {/* <Hero /> */}
       </main>
       <Footer />
     </>
