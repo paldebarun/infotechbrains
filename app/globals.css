@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "disket";
+  src: url('/fonts/disket.woff2') format("woff2");
+}
+@font-face {
+  font-family: 'recoleta';
+  src: url('/fonts/recoleta.woff2') format('woff2');
+}
 @layer base {
   ::-webkit-scrollbar {
     width: 8px;
@@ -20,4 +28,11 @@
   ::-webkit-scrollbar-corner {
     background: #f1f1f1;
   }
+  .disket {
+    font-family: disket;
+  }
+  .recoleta {
+    font-family: recoleta;
+  }
+
 }
