@@ -124,6 +124,60 @@ const posts = [
             </svg>
         ),
     },
+    {
+        id: 5,
+        title: "Boost your conversion rate",
+        href: "#",
+        description:
+            "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.",
+        svg: (
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="90"
+                height="90"
+                viewBox="0 0 64 66"
+                fill="none"
+            >
+                <path
+                    id="Vector"
+                    d="M32.0001 63.5413L62.1108 25.6371L47.0555 2.45874M32.0001 63.5413L1.88933 25.6371L16.9447 2.45874M32.0001 63.5413L47.0555 2.45874M32.0001 63.5413L16.9447 2.45874M16.9447 2.45874L47.0555 2.45874M60.6231 25.3059H1.88916"
+                    stroke="#0FA4EA"
+                    strokeWidth="3.44505"
+                    strokeMiterlimit="10"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                ></path>
+            </svg>
+        ),
+        date: "Feb 16, 2024",
+    },
+    {
+        id: 6,
+        title: "How to use search engine optimization to drive sales",
+        href: "#",
+        description:
+            "Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde.",
+        svg: (
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="90"
+                height="90"
+                viewBox="0 0 66 74"
+                fill="none"
+            >
+                <path
+                    id="Vector"
+                    d="M2.59026 19.4326L33.17 36.9997M33.17 36.9997L63.0993 19.4331M33.17 36.9997L33.1702 72.1342M2.59009 19.4426L33.0445 1.86572L63.41 19.3931V54.4479L33.0445 71.972L2.67912 54.4479L2.59009 19.4426Z"
+                    stroke="#E7107E"
+                    strokeWidth="3.25832"
+                    strokeMiterlimit="10"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                ></path>
+            </svg>
+        ),
+        date: "Feb 12, 2024",
+    },
     // More posts...
 ];
 

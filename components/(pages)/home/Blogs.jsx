@@ -23,13 +23,30 @@ const Blog = () => {
                 </div>
             </div>
 
-            <div className="flex max-w-7xl mx-auto lg:px-8">
+            <div className="relative px-6 md:px-10 overflow-x-hidden ml-6">
                 <Swiper
-                    slidesPerView={3}
-                    spaceBetween={30}
+                    slidesPerView={1}
+                    spaceBetween={20}
                     freeMode={true}
+                    breakpoints={{
+                        // 640: {
+                        //   slidesPerView: 2,
+                        //   spaceBetween: 20,
+                        // },
+                        768: {
+                            slidesPerView: 2,
+                            spaceBetween: 30,
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                            spaceBetween: 40,
+                        },
+                    }}
                     modules={[FreeMode]}
-                    className="mySwiper"
+                    className="mySwiper overscroll-x-none -translate-x-2 md:-translate-x-4"
+                    style={{
+                        overflow: "visible",
+                    }}
                 >
                     <Button />
 
