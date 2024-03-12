@@ -5,19 +5,22 @@ import "./ContactButton.css";
 
 const ServicesSubCards = [
   {
-    title: "Design.",
-    subpara: "Handcraft the user experience",
+    title: "AI/ML",
+    subpara: "Artificial Intelligence(AI) Development Services.",
     initialbgCol: "#f593b2",
+    childServices: ["AI Consulting", "AI Software Development", "AIaas(AI as a Service)", "AI App Development Services", "Chatbot Development Services", "Natural Language Processing Services", "Generative AI Development Services", "Smart Ai Assistants & chatbots", "Computer Vision"]
   },
   {
-    title: "Technology.",
+    title: "AI Solutions.",
     subpara: "Handcraft the user experience",
     initialbgCol: "#c993f5",
+    childServices: ["Decision Management Solutions", "Deep Learning Solutions", "Expert Systems", "Natural Language Generation Software", "Natural Language Understanding Software", "Edge AI Solutions", "Fine-Tuning Models", "Model Integration and Deployment", "Recommendation Engine"]
   },
   {
-    title: "Marketing.",
+    title: "Industry Specific Use-Cases.",
     subpara: "Handcraft the user experience",
     initialbgCol: "#9aafe3",
+    childServices: ["Finance", "Healthcare", "Retail", "Manufacturing", "Transportation", "Marketing and Advertising", "Education", "Legal"]
   },
 ];
 
@@ -52,35 +55,41 @@ const Card = ({ setIsDropdownOpen, subCardArr }) => {
 
   return (
     <div
-      className="group relative m-3" 
+      className="group relative m-3"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       <div
-        className={`p-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 ${
-          isHovered ? "scale-105" : ""
+        className={`relative p-6 shadow-md transition duration-300 ease-in-out transform hover:scale-105 ${
+          isHovered ? "scale-105 rounded-t-lg" : "rounded-lg"
         }`}
         style={{ backgroundColor: subCardArr.initialbgCol }}
       >
-        <h2 className="text-gray-800 text-[38px] font-bold mb-2">{subCardArr.title}</h2>
-        <div className="flex flex-row">
-        <p className="text-gray-600 font-semibold text-[16px] mr-8">{subCardArr.subpara}</p>
-        <img 
-          src="/arrow-right.svg"
-          height={'8px'}
-          width={'30px'}
-          // className=""
-          />
+        <h2 className="text-gray-800 text-[27px] font-bold mb-2">
+          {subCardArr.title}
+        </h2>
+        <p className="text-gray-600 font-semibold text-[16px] mr-8">
+          {subCardArr.subpara}
+        </p>
+        {isHovered && (
+          <div 
+            className="absolute top-full left-0 w-full rounded-b-lg shadow-md py-2 px-4"
+            style={{ backgroundColor: subCardArr.initialbgCol }}
+          >
+            {/* Render services */}
+            <div className="flex flex-wrap gap-2">
+              {subCardArr.childServices?.map((service, index) => (
+                <button
+                  key={index}
+                  className="bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded-md text-sm text-gray-800"
+                >
+                  {service}
+                </button>
+              ))}
+            </div>
           </div>
+        )}
       </div>
-      {isHovered && (
-        <div className="absolute top-0 left-0 w-full h-full bg-white opacity-0 hover:opacity-100 transition-opacity duration-300">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h2 className="text-gray-800 font-semibold mb-2">Subcard</h2>
-            <p className="text-gray-600">Subcard content for Card</p>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
@@ -91,12 +100,12 @@ const Navbar = () => {
 
   const handleServicesDropdownToggle = () => {
     setIsServicesDropdownOpen(!isServicesDropdownOpen);
-    setIsAboutDropdownOpen(false); 
+    setIsAboutDropdownOpen(false);
   };
 
   const handleAboutDropdownToggle = () => {
     setIsAboutDropdownOpen(!isAboutDropdownOpen);
-    setIsServicesDropdownOpen(false); 
+    setIsServicesDropdownOpen(false);
   };
 
   const handleNavLinkClick = () => {
@@ -108,7 +117,7 @@ const Navbar = () => {
     <nav className="bg-[#ffffff] py-4 border-b-2 border-[#000000]">
       <div className="container mx-auto flex items-center justify-between">
         <a href="#" className="text-[#000000] text-xl font-bold">
-          Your Company Name
+          InfoTechBrains
         </a>
         <div className="flex items-center justify-center flex-1">
           <a
@@ -136,14 +145,14 @@ const Navbar = () => {
               </svg>
             </button>
             <div
-              className={`absolute w-[1562px] bg-white border-b-2 border-[#000000] py-2 px-4 top-12 left-[100%] transform -translate-x-1/2 ${
+              className={`absolute w-[1562px] mr-5 bg-white border-b-2 border-[#000000] py-2 px-4 top-12 left-[170px] transform -translate-x-1/2 ${
                 isServicesDropdownOpen
                   ? "opacity-100 visible"
                   : "opacity-0 invisible"
               } transition duration-300`}
             >
               <div className="flex flex-row justify-center">
-                {ServicesSubCards.map((subCard, index) => (
+                {ServicesSubCards?.map((subCard, index) => (
                   <Card
                     key={index}
                     setIsDropdownOpen={setIsServicesDropdownOpen}
