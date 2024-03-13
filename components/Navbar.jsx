@@ -8,13 +8,13 @@ const ServicesSubCards = [
     title: "AI/ML",
     subpara: "Artificial Intelligence(AI) Development Services.",
     initialbgCol: "#f593b2",
-    childServices: ["AI Consulting", "AI Software Development", "AIaas(AI as a Service)", "AI App Development Services", "Chatbot Development Services", "Natural Language Processing Services", "Generative AI Development Services", "Smart Ai Assistants & chatbots", "Computer Vision"]
+    childServices: ["AI Consulting", "AI Software Development", "AIaas(AI as a Service)", "AI App Development", "Chatbot Development", "Natural Language Processing", "Generative AI Development", "Smart Ai Assistants & chatbots", "Computer Vision"]
   },
   {
     title: "AI Solutions.",
     subpara: "Handcraft the user experience",
     initialbgCol: "#c993f5",
-    childServices: ["Decision Management Solutions", "Deep Learning Solutions", "Expert Systems", "Natural Language Generation Software", "Natural Language Understanding Software", "Edge AI Solutions", "Fine-Tuning Models", "Model Integration and Deployment", "Recommendation Engine"]
+    childServices: ["Decision Management Solutions", "Natural Language Generation Software", "Recommendation Engine", "Deep Learning Solutions", "Natural Language Understanding Software", "Model Integration and Deployment", "Edge AI Solutions", "Fine-Tuning Models", "Expert Systems"]
   },
   {
     title: "Industry Specific Use-Cases.",
@@ -77,14 +77,15 @@ const Card = ({ setIsDropdownOpen, subCardArr }) => {
             style={{ backgroundColor: subCardArr.initialbgCol }}
           >
             {/* Render services */}
-            <div className="flex flex-wrap gap-2">
+            <div className="grid grid-cols-2 gap-x-4 gap-y-2">
               {subCardArr.childServices?.map((service, index) => (
-                <button
+                <a
                   key={index}
-                  className="bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded-md text-sm text-gray-800"
+                  href={`#${service}`}
+                  className="text-gray-800 hover:text-[#ef2168] text-sm"
                 >
                   {service}
-                </button>
+                </a>
               ))}
             </div>
           </div>
@@ -93,6 +94,7 @@ const Card = ({ setIsDropdownOpen, subCardArr }) => {
     </div>
   );
 };
+
 
 const Navbar = () => {
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
