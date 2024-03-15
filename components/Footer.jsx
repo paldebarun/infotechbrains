@@ -4,12 +4,12 @@ import { footerdata } from "../data/footerdata";
 import { IoLogoFacebook } from "react-icons/io5";
 import { FaLinkedin } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
-import londonlight from "../public/images/city-london-light.png" 
-import lisbanlight from "../public/images/city-lisbon-light.png" 
-import milanlight from "../public/images/city-milan-light.png" 
-import logo2 from '../public/images/review-clutch.svg'
-import logo3 from '../public/images/review-pme-22.svg'
-import mainlogo from '../public/images/logoalter.svg'
+import londonlight from "../public/images/city-london-light.png";
+import lisbanlight from "../public/images/city-lisbon-light.png";
+import milanlight from "../public/images/city-milan-light.png";
+import logo2 from "../public/images/review-clutch.svg";
+import logo3 from "../public/images/review-pme-22.svg";
+import mainlogo from "../public/images/logoalter.svg";
 
 const Footer = () => {
   return (
@@ -18,12 +18,7 @@ const Footer = () => {
         <div className="w-full md:w-[40%]  flex   flex-col md:justify-end  gap-12">
           <div className="text-white flex gap-5 items-center  ">
             <figure>
-              <Image
-                width={20}
-                height={20}
-                alt="logo png"
-                src={mainlogo}
-              />
+              <Image width={20} height={20} alt="logo png" src={mainlogo} />
             </figure>
 
             <div className="text-xl">alter.io</div>
@@ -40,20 +35,9 @@ const Footer = () => {
           </a>
 
           <figure className="flex gap-9 items-center">
-            <Image
-              width={100}
-              height={100}
-              alt="footer image"
-              src={logo2}
-            />
+            <Image width={100} height={100} alt="footer image" src={logo2} />
 
-              <Image
-              width={70}
-              height={70}
-              alt="footer image"
-              src={logo3}
-            />
-
+            <Image width={70} height={70} alt="footer image" src={logo3} />
           </figure>
         </div>
 
@@ -80,14 +64,20 @@ const Footer = () => {
 
               <div className="text-white flex items-center sm:text-md text-sm">
                 <div>Phone:</div>
-                <a href="tel:+351930944995" className="text-pink-500 hover:text-slate-500 cursor-pointer">
+                <a
+                  href="tel:+351930944995"
+                  className="text-pink-500 hover:text-slate-500 cursor-pointer"
+                >
                   +351 930944995
                 </a>
               </div>
 
               <div className="text-white flex items-center gap-3 sm:text-md text-sm">
                 <div>Email:</div>
-                <a href="mailto:lisbon@altar.io" className="text-pink-500 hover:text-slate-500 cursor-pointer">
+                <a
+                  href="mailto:lisbon@altar.io"
+                  className="text-pink-500 hover:text-slate-500 cursor-pointer"
+                >
                   lisbon@altar.io
                 </a>
               </div>
@@ -100,10 +90,7 @@ const Footer = () => {
                 width={120}
                 height={120}
                 alt="footer image 3"
-                src={
-                  londonlight
-                }
-                
+                src={londonlight}
               />
             </figure>
 
@@ -118,14 +105,20 @@ const Footer = () => {
 
               <div className="text-white flex items-center sm:text-md text-sm">
                 <div>Phone:</div>
-                <a href="tel:+447802685611" className="text-pink-500 hover:text-slate-500 cursor-pointer">
+                <a
+                  href="tel:+447802685611"
+                  className="text-pink-500 hover:text-slate-500 cursor-pointer"
+                >
                   +44 7802685611
                 </a>
               </div>
 
               <div className="text-white flex items-center gap-3 sm:text-md text-sm">
                 <div>Email:</div>
-                <a href="mailto:london@altar.io" className="text-pink-500 hover:text-slate-500 cursor-pointer">
+                <a
+                  href="mailto:london@altar.io"
+                  className="text-pink-500 hover:text-slate-500 cursor-pointer"
+                >
                   london@altar.io
                 </a>
               </div>
@@ -154,14 +147,20 @@ const Footer = () => {
 
               <div className="text-white flex items-center sm:text-md text-sm">
                 <div>Phone:</div>
-                <a href="tel:+393318853562" className="text-pink-500 hover:text-slate-500 cursor-pointer">
+                <a
+                  href="tel:+393318853562"
+                  className="text-pink-500 hover:text-slate-500 cursor-pointer"
+                >
                   +39 3318853562
                 </a>
               </div>
 
               <div className="text-white flex items-center gap-3 sm:text-md text-sm">
                 <div>Email:</div>
-                <a href="mailto:milan@altar.io" className="text-pink-500 hover:text-slate-500 cursor-pointer">
+                <a
+                  href="mailto:milan@altar.io"
+                  className="text-pink-500 hover:text-slate-500 cursor-pointer"
+                >
                   {" "}
                   milan@altar.io
                 </a>
@@ -178,9 +177,7 @@ const Footer = () => {
               width={60}
               alt="footer image 2"
               height={70}
-              src={
-                mainlogo
-              }
+              src={mainlogo}
               className=" w-10 h-10"
             />
           </figure>
