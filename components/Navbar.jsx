@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./ContactButton.css";
 
 const ServicesSubCards = [
@@ -8,19 +8,48 @@ const ServicesSubCards = [
     title: "AI/ML",
     subpara: "Artificial Intelligence(AI) Development Services.",
     initialbgCol: "#f593b2",
-    childServices: ["AI Consulting", "AI Software Development", "AIaas(AI as a Service)", "AI App Development", "Chatbot Development", "Natural Language Processing", "Generative AI Development", "Smart Ai Assistants & chatbots", "Computer Vision"]
+    childServices: [
+      "AI Consulting",
+      "AI Software Development",
+      "AIaas(AI as a Service)",
+      "AI App Development",
+      "Chatbot Development",
+      "Natural Language Processing",
+      "Generative AI Development",
+      "Smart Ai Assistants & chatbots",
+      "Computer Vision",
+    ],
   },
   {
     title: "AI Solutions.",
     subpara: "Handcraft the user experience",
     initialbgCol: "#c993f5",
-    childServices: ["Decision Management Solutions", "Natural Language Generation Software", "Recommendation Engine", "Deep Learning Solutions", "Natural Language Understanding Software", "Model Integration and Deployment", "Edge AI Solutions", "Fine-Tuning Models", "Expert Systems"]
+    childServices: [
+      "Decision Management Solutions",
+      "Natural Language Generation Software",
+      "Recommendation Engine",
+      "Deep Learning Solutions",
+      "Natural Language Understanding Software",
+      "Model Integration and Deployment",
+      "Edge AI Solutions",
+      "Fine-Tuning Models",
+      "Expert Systems",
+    ],
   },
   {
     title: "Industry Specific Use-Cases.",
     subpara: "Handcraft the user experience",
     initialbgCol: "#9aafe3",
-    childServices: ["Finance", "Healthcare", "Retail", "Manufacturing", "Transportation", "Marketing and Advertising", "Education", "Legal"]
+    childServices: [
+      "Finance",
+      "Healthcare",
+      "Retail",
+      "Manufacturing",
+      "Transportation",
+      "Marketing and Advertising",
+      "Education",
+      "Legal",
+    ],
   },
 ];
 
@@ -44,7 +73,6 @@ const AboutSubCards = [
 
 const Card = ({ setIsDropdownOpen, subCardArr }) => {
   const [isHovered, setIsHovered] = useState(false);
-
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
@@ -55,7 +83,7 @@ const Card = ({ setIsDropdownOpen, subCardArr }) => {
 
   return (
     <div
-      className="group relative m-3"
+      className="group relative m-3 sm:m-3" // Adjusted class for smaller screens
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -68,11 +96,14 @@ const Card = ({ setIsDropdownOpen, subCardArr }) => {
         <h2 className="text-gray-800 text-[27px] font-bold mb-2">
           {subCardArr.title}
         </h2>
-        <p className="text-gray-600 font-semibold text-[16px] mr-8">
+        <p className="text-gray-600 font-semibold text-[16px] sm:mr-8">
+          {" "}
+          {/* Adjusted class for smaller screens */}
           {subCardArr.subpara}
         </p>
         {isHovered && (
-          <div 
+          <div
+            ref={childServicesRef}
             className="absolute top-full left-0 w-full rounded-b-lg shadow-md py-2 px-4"
             style={{ backgroundColor: subCardArr.initialbgCol }}
           >
@@ -95,11 +126,12 @@ const Card = ({ setIsDropdownOpen, subCardArr }) => {
   );
 };
 
-
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
 
+  
   const handleServicesDropdownToggle = () => {
     setIsServicesDropdownOpen(!isServicesDropdownOpen);
     setIsAboutDropdownOpen(false);
@@ -115,108 +147,278 @@ const Navbar = () => {
     setIsAboutDropdownOpen(false);
   };
 
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+    setIsServicesDropdownOpen(false);
+    setIsAboutDropdownOpen(false);
+  };
+
   return (
-    <nav className="bg-[#ffffff] py-4 border-b-2 border-[#000000]">
-      <div className="container mx-auto flex items-center justify-between">
-        <a href="#" className="text-[#000000] text-xl font-bold">
-          InfoTechBrains
-        </a>
-        <div className="flex items-center justify-center flex-1">
-          <a
-            href="#"
-            className="text-[#000000] mr-6 hover:text-[#ef2168] ml-2"
-            onClick={handleNavLinkClick}
-          >
-            Work
+    <>
+      <nav className="bg-[#ffffff] py-4 border-b-2 border-[#000000] lg:hidden">
+        {" "}
+        {/* Adjusted class for smaller screens */}
+        <div className="container mx-auto flex items-center justify-between">
+          <a href="#" className="text-[#000000] text-xl font-bold">
+            InfoTechBrains
           </a>
+          <button
+            onClick={toggleMenu}
+            className="text-[#000000] hover:text-[#ef2168] focus:outline-none lg:hidden"
+          >
+            {/* Hamburger Icon */}
+            <svg
+              className="w-7 h-7 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </button>
           <div
-            className="relative group"
-            onClick={handleServicesDropdownToggle}
+            className={`fixed top-0 left-0 w-screen h-screen bg-white z-50 overflow-y-auto ${
+              isOpen ? "block" : "hidden"
+            }`}
           >
-            <button className="text-[#000000] mr-6 hover:text-[#ef2168] flex items-center ml-2">
-              Services
+            <button
+              onClick={() => setIsOpen(false)} // Use a function to set isOpen to false
+              className="text-[#000000] hover:text-[#ef2168] focus:outline-none lg:hidden"
+            >
+              {/* Cross Icon */}
               <svg
-                className="icon ml-1 transition transform group-hover:rotate-180"
-                width="14"
-                height="16"
-                viewBox="0 0 320 512"
-                fill="currentColor"
+                width="34px"
+                height="34px"
+                viewBox="0 0 24 24"
+                fill="none"
+                className="hover:text-[#ef2168]"
                 xmlns="http://www.w3.org/2000/svg"
+                stroke="#000000"
+                strokeWidth="2"
               >
-                <path d="M151.5 347.8L3.5 201c-4.7-4.7-4.7-12.3 0-17l19.8-19.8c4.7-4.7 12.3-4.7 17 0L160 282.7l119.7-118.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17l-148 146.8c-4.7 4.7-12.3 4.7-17 0z" />
+                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="M6 6L18 18"
+                    stroke="#000000"
+                    strokeLinecap="round"
+                  ></path>
+                  <path
+                    d="M18 6L6 18"
+                    stroke="#000000"
+                    strokeLinecap="round"
+                  ></path>
+                </g>
               </svg>
             </button>
-            <div
-              className={`absolute w-[1562px] mr-5 bg-white border-b-2 border-[#000000] py-2 px-4 top-12 left-[170px] transform -translate-x-1/2 ${
-                isServicesDropdownOpen
-                  ? "opacity-100 visible"
-                  : "opacity-0 invisible"
-              } transition duration-300`}
-            >
-              <div className="flex flex-row justify-center">
-                {ServicesSubCards?.map((subCard, index) => (
-                  <Card
-                    key={index}
-                    setIsDropdownOpen={setIsServicesDropdownOpen}
-                    subCardArr={subCard}
-                  />
-                ))}
-              </div>
+            <div className="container mx-auto py-4">
+              <ul className="space-y-4">
+                <li>
+                  <a
+                    href="#"
+                    className="text-[#000000] hover:text-[#ef2168] block"
+                  >
+                    Work
+                  </a>
+                </li>
+                <li className="relative">
+                  <button
+                    onClick={handleServicesDropdownToggle}
+                    className="text-[#000000] hover:text-[#ef2168] block"
+                  >
+                    Services
+                    <svg
+                      className="icon ml-1 transition transform group-hover:rotate-180"
+                      width="14"
+                      height="16"
+                      viewBox="0 0 320 512"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M151.5 347.8L3.5 201c-4.7-4.7-4.7-12.3 0-17l19.8-19.8c4.7-4.7 12.3-4.7 17 0L160 282.7l119.7-118.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17l-148 146.8c-4.7 4.7-12.3 4.7-17 0z" />
+                    </svg>
+                  </button>
+                  {/* Services Dropdown */}
+                  <div
+                    className={`absolute top-full left-0 w-full bg-white py-2 px-4 ${
+                      isServicesDropdownOpen ? "block" : "hidden"
+                    }`}
+                  >
+                    {ServicesSubCards.map((subCard, index) => (
+                      <Card
+                        key={index}
+                        setIsDropdownOpen={setIsServicesDropdownOpen}
+                        subCardArr={subCard}
+                      />
+                    ))}
+                  </div>
+                </li>
+                <li className="relative">
+                  <button
+                    onClick={handleAboutDropdownToggle}
+                    className="text-[#000000] hover:text-[#ef2168] block"
+                  >
+                    About
+                    <svg
+                      className="icon ml-1 transition transform group-hover:rotate-180"
+                      width="14"
+                      height="16"
+                      viewBox="0 0 320 512"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M151.5 347.8L3.5 201c-4.7-4.7-4.7-12.3 0-17l19.8-19.8c4.7-4.7 12.3-4.7 17 0L160 282.7l119.7-118.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17l-148 146.8c-4.7 4.7-12.3 4.7-17 0z" />
+                    </svg>
+                  </button>
+                  {/* About Dropdown */}
+                  <div
+                    className={`absolute top-full left-0 w-full bg-white border-b-2 border-[#000000] py-2 px-4 ${
+                      isAboutDropdownOpen ? "block" : "hidden"
+                    }`}
+                  >
+                    {AboutSubCards.map((subCard, index) => (
+                      <Card
+                        key={index}
+                        setIsDropdownOpen={setIsAboutDropdownOpen}
+                        subCardArr={subCard}
+                      />
+                    ))}
+                  </div>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-[#000000] hover:text-[#ef2168] block"
+                  >
+                    Clients
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-[#000000] hover:text-[#ef2168] block"
+                  >
+                    Knowledge
+                  </a>
+                </li>
+              </ul>
             </div>
-          </div>
-          <div className="relative group" onClick={handleAboutDropdownToggle}>
-            <button className="text-[#000000] mr-6 hover:text-[#ef2168] flex items-center ml-2">
-              About
-              <svg
-                className="icon ml-1 transition transform group-hover:rotate-180"
-                width="14"
-                height="16"
-                viewBox="0 0 320 512"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M151.5 347.8L3.5 201c-4.7-4.7-4.7-12.3 0-17l19.8-19.8c4.7-4.7 12.3-4.7 17 0L160 282.7l119.7-118.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17l-148 146.8c-4.7 4.7-12.3 4.7-17 0z" />
-              </svg>
-            </button>
-            <div
-              className={`absolute w-[1562px] bg-white border-b-2 border-[#000000] py-2 px-4 top-12 left-[20%] transform -translate-x-1/2 ${
-                isAboutDropdownOpen
-                  ? "opacity-100 visible"
-                  : "opacity-0 invisible"
-              } transition duration-300`}
-            >
-              <div className="flex flex-row justify-center">
-                {AboutSubCards.map((subCard, index) => (
-                  <Card
-                    key={index}
-                    setIsDropdownOpen={setIsAboutDropdownOpen}
-                    subCardArr={subCard}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-          <a
-            href="#"
-            className="text-[#000000] mr-6 hover:text-[#ef2168] ml-2"
-            onClick={handleNavLinkClick}
-          >
-            Clients
-          </a>
-          <a
-            href="#"
-            className="text-[#000000] mr-6 hover:text-[#ef2168] ml-2"
-            onClick={handleNavLinkClick}
-          >
-            Knowledge
-          </a>
-          <div class="button">
-            <span class="label-up">Contact</span>
-            <span class="label-up">Contact</span>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+      <nav className="bg-[#ffffff] py-4 border-b-2 border-[#000000] hidden lg:block">
+        <div className="container mx-auto flex items-center justify-between">
+          <a href="#" className="text-[#000000] text-xl font-bold">
+            InfoTechBrains
+          </a>
+          <div className="flex items-center justify-center flex-1">
+            <a
+              href="#"
+              className="text-[#000000] mr-6 hover:text-[#ef2168] ml-2"
+              onClick={handleNavLinkClick}
+            >
+              Work
+            </a>
+            <div
+              className="relative group"
+              onClick={handleServicesDropdownToggle}
+            >
+              <button className="text-[#000000] mr-6 hover:text-[#ef2168] flex items-center ml-2">
+                Services
+                <svg
+                  className="icon ml-1 transition transform group-hover:rotate-180"
+                  width="14"
+                  height="16"
+                  viewBox="0 0 320 512"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M151.5 347.8L3.5 201c-4.7-4.7-4.7-12.3 0-17l19.8-19.8c4.7-4.7 12.3-4.7 17 0L160 282.7l119.7-118.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17l-148 146.8c-4.7 4.7-12.3 4.7-17 0z" />
+                </svg>
+              </button>
+              <div
+                className={`absolute w-[1562px] mr-5 bg-white border-b-2 border-[#000000] py-2 px-4 top-12 left-[170px] transform -translate-x-1/2 ${
+                  isServicesDropdownOpen
+                    ? "opacity-100 visible"
+                    : "opacity-0 invisible"
+                } transition duration-300`}
+              >
+                <div className="flex flex-row justify-center">
+                  {ServicesSubCards?.map((subCard, index) => (
+                    <Card
+                      key={index}
+                      setIsDropdownOpen={setIsServicesDropdownOpen}
+                      subCardArr={subCard}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="relative group" onClick={handleAboutDropdownToggle}>
+              <button className="text-[#000000] mr-6 hover:text-[#ef2168] flex items-center ml-2">
+                About
+                <svg
+                  className="icon ml-1 transition transform group-hover:rotate-180"
+                  width="14"
+                  height="16"
+                  viewBox="0 0 320 512"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M151.5 347.8L3.5 201c-4.7-4.7-4.7-12.3 0-17l19.8-19.8c4.7-4.7 12.3-4.7 17 0L160 282.7l119.7-118.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17l-148 146.8c-4.7 4.7-12.3 4.7-17 0z" />
+                </svg>
+              </button>
+              <div
+                className={`absolute w-[1562px] bg-white border-b-2 border-[#000000] py-2 px-4 top-12 left-[20%] transform -translate-x-1/2 ${
+                  isAboutDropdownOpen
+                    ? "opacity-100 visible"
+                    : "opacity-0 invisible"
+                } transition duration-300`}
+              >
+                <div className="flex flex-row justify-center">
+                  {AboutSubCards.map((subCard, index) => (
+                    <Card
+                      key={index}
+                      setIsDropdownOpen={setIsAboutDropdownOpen}
+                      subCardArr={subCard}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+            <a
+              href="#"
+              className="text-[#000000] mr-6 hover:text-[#ef2168] ml-2"
+              onClick={handleNavLinkClick}
+            >
+              Clients
+            </a>
+            <a
+              href="#"
+              className="text-[#000000] mr-6 hover:text-[#ef2168] ml-2"
+              onClick={handleNavLinkClick}
+            >
+              Knowledge
+            </a>
+            <div class="button">
+              <span class="label-up">Contact</span>
+              <span class="label-up">Contact</span>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </>
   );
 };
 
