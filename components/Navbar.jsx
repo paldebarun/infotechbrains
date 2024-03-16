@@ -55,18 +55,18 @@ const ServicesSubCards = [
 
 const AboutSubCards = [
   {
-    title: "About us.",
-    subpara: "Handcraft the user experience",
+    title: "About Us.",
+    subpara: "We're super efficient yet humble to serve you!",
     initialbgCol: "#f593b2",
   },
   {
     title: "Team.",
-    subpara: "Handcraft the user experience",
+    subpara: "We're proud of our experienced and accomplished team.",
     initialbgCol: "#c993f5",
   },
   {
     title: "Career.",
-    subpara: "Handcraft the user experience",
+    subpara: "Can you offer such experience?",
     initialbgCol: "#9aafe3",
   },
 ];
