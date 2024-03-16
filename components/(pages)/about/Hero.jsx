@@ -7,9 +7,9 @@ import Image from '@/node_modules/next/image';
 
 const Hero = () => {
   return (
-    <div className=''>
+    <div className='py-10'>
     <div className='flex flex-col justify-center items-center gap-5 md:gap-6'>
-        <div className='w-full h-auto flex justify-center items-center text-2xl sm:text-3xl md:text-4xl text-slate-600 font-bold'>
+        <div className='w-full h-auto flex justify-center items-center text-3xl sm:text-4xl md:text-6xl text-black font-bold'>
           About Us
         </div>
         <div className=''>
@@ -64,11 +64,11 @@ const Hero = () => {
 
   </div>
 
-  <div className='flex lg:flex-row flex-col gap-10 lg:gap-6 justify-between px-3 sm:px-16 py-16 items-center'>
+  <div className='flex lg:flex-row flex-col gap-10 lg:gap-6 justify-between  sm:px-16 py-16 items-center'>
     
     <div className='flex flex-col gap-5 w-10/12 lg:w-7/12'>
       <span className='text-sm font-semibold'>CORPORATE SERVICE</span>
-      <span><h1 className='text-6xl font-semibold text-slate-600'> Meet our top clients and partners</h1></span>
+      <span><h1 className='text-3xl md:text-6xl font-semibold text-black'> Meet our top clients and partners</h1></span>
     </div>
 
     
