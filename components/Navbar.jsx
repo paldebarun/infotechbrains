@@ -76,20 +76,19 @@ const Card = ({ setIsDropdownOpen, subCardArr }) => {
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
-
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
 
   return (
     <div
-      className="group relative m-3 sm:m-3" // Adjusted class for smaller screens
+      className="group relative m-3 sm:m-3"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       <div
-        className={`relative p-6 shadow-md transition duration-300 ease-in-out transform hover:scale-105 ${
-          isHovered ? "scale-105 rounded-t-lg" : "rounded-lg"
+        className={`relative p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:scale-105 ${
+          isHovered ? "scale-105" : ""
         }`}
         style={{ backgroundColor: subCardArr.initialbgCol }}
       >
@@ -97,17 +96,13 @@ const Card = ({ setIsDropdownOpen, subCardArr }) => {
           {subCardArr.title}
         </h2>
         <p className="text-gray-600 font-semibold text-[16px] sm:mr-8">
-          {" "}
-          {/* Adjusted class for smaller screens */}
           {subCardArr.subpara}
         </p>
         {isHovered && (
           <div
-            ref={childServicesRef}
-            className="absolute top-full left-0 w-full rounded-b-lg shadow-md py-2 px-4"
+            className="left-0 w-full rounded py-2 px-4 mt-3"
             style={{ backgroundColor: subCardArr.initialbgCol }}
           >
-            {/* Render services */}
             <div className="grid grid-cols-2 gap-x-4 gap-y-2">
               {subCardArr.childServices?.map((service, index) => (
                 <a
@@ -131,7 +126,6 @@ const Navbar = () => {
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
 
-  
   const handleServicesDropdownToggle = () => {
     setIsServicesDropdownOpen(!isServicesDropdownOpen);
     setIsAboutDropdownOpen(false);
@@ -189,15 +183,13 @@ const Navbar = () => {
           >
             <button
               onClick={() => setIsOpen(false)} // Use a function to set isOpen to false
-              className="text-[#000000] hover:text-[#ef2168] focus:outline-none lg:hidden"
+              className="text-[#000000] duration-75 hover:text-[#ef2168] focus:outline-none lg:hidden"
             >
               {/* Cross Icon */}
               <svg
-                width="34px"
-                height="34px"
                 viewBox="0 0 24 24"
                 fill="none"
-                className="hover:text-[#ef2168]"
+                className="w-[34px] h-[34px] md:w-[38px] md:h-[38px] m-2"
                 xmlns="http://www.w3.org/2000/svg"
                 stroke="#000000"
                 strokeWidth="2"
@@ -222,12 +214,12 @@ const Navbar = () => {
                 </g>
               </svg>
             </button>
-            <div className="container mx-auto py-4">
-              <ul className="space-y-4">
+            <div className="container mx-auto md:m-0 py-4">
+              <ul className="space-y-4 m-[10px]">
                 <li>
                   <a
                     href="#"
-                    className="text-[#000000] hover:text-[#ef2168] block"
+                    className="text-[#000000] text-[24px] font-semibold hover:text-[#ef2168] block"
                   >
                     Work
                   </a>
@@ -235,7 +227,11 @@ const Navbar = () => {
                 <li className="relative">
                   <button
                     onClick={handleServicesDropdownToggle}
-                    className="text-[#000000] hover:text-[#ef2168] block"
+                    className={`text-[24px] font-semibold hover:text-[#ef2168] block ${
+                      isServicesDropdownOpen
+                        ? "text-[#ef2168]"
+                        : "text-[#000000]"
+                    }`}
                   >
                     Services
                     <svg
@@ -251,7 +247,7 @@ const Navbar = () => {
                   </button>
                   {/* Services Dropdown */}
                   <div
-                    className={`absolute top-full left-0 w-full bg-white py-2 px-4 ${
+                    className={`top-full left-0 w-full bg-white py-2 px-4 ${
                       isServicesDropdownOpen ? "block" : "hidden"
                     }`}
                   >
@@ -267,7 +263,9 @@ const Navbar = () => {
                 <li className="relative">
                   <button
                     onClick={handleAboutDropdownToggle}
-                    className="text-[#000000] hover:text-[#ef2168] block"
+                    className={`text-[24px] font-semibold hover:text-[#ef2168] block ${
+                      isAboutDropdownOpen ? "text-[#ef2168]" : "text-[#000000]"
+                    }`}
                   >
                     About
                     <svg
@@ -283,7 +281,7 @@ const Navbar = () => {
                   </button>
                   {/* About Dropdown */}
                   <div
-                    className={`absolute top-full left-0 w-full bg-white border-b-2 border-[#000000] py-2 px-4 ${
+                    className={`top-full left-0 w-full bg-white py-2 px-4 ${
                       isAboutDropdownOpen ? "block" : "hidden"
                     }`}
                   >
@@ -299,7 +297,7 @@ const Navbar = () => {
                 <li>
                   <a
                     href="#"
-                    className="text-[#000000] hover:text-[#ef2168] block"
+                    className="text-[#000000] text-[24px] font-semibold hover:text-[#ef2168] block"
                   >
                     Clients
                   </a>
@@ -307,10 +305,16 @@ const Navbar = () => {
                 <li>
                   <a
                     href="#"
-                    className="text-[#000000] hover:text-[#ef2168] block"
+                    className="text-[#000000] text-[24px] font-semibold hover:text-[#ef2168] block"
                   >
                     Knowledge
                   </a>
+                </li>
+                <li>
+                  <div class="button">
+                    <span class="label-up">Contact</span>
+                    <span class="label-up">Contact</span>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -334,7 +338,11 @@ const Navbar = () => {
               className="relative group"
               onClick={handleServicesDropdownToggle}
             >
-              <button className="text-[#000000] mr-6 hover:text-[#ef2168] flex items-center ml-2">
+              <button
+                className={`mr-6 hover:text-[#ef2168] flex items-center ml-2 ${
+                  isServicesDropdownOpen ? "text-[#ef2168]" : "text-[#000000]"
+                }`}
+              >
                 Services
                 <svg
                   className="icon ml-1 transition transform group-hover:rotate-180"
@@ -366,7 +374,11 @@ const Navbar = () => {
               </div>
             </div>
             <div className="relative group" onClick={handleAboutDropdownToggle}>
-              <button className="text-[#000000] mr-6 hover:text-[#ef2168] flex items-center ml-2">
+              <button
+                className={`mr-6 hover:text-[#ef2168] flex items-center ml-2 ${
+                  isAboutDropdownOpen ? "text-[#ef2168]" : "text-[#000000]"
+                }`}
+              >
                 About
                 <svg
                   className="icon ml-1 transition transform group-hover:rotate-180"
