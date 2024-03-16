@@ -121,6 +121,53 @@ const Card = ({ setIsDropdownOpen, subCardArr }) => {
   );
 };
 
+const CardMob = ({ setIsDropdownOpen, subCardArr }) => {
+  const [isOnClick, setIsOnClick] = useState(false);
+
+  const handleClick = () => {
+    setIsOnClick(!isOnClick);
+  };
+
+  return (
+    <div
+      className="group relative m-3 sm:m-3 hover:cursor-pointer"
+      onClick={handleClick}
+    >
+      <div
+        className={`relative p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:scale-105 ${
+          isOnClick ? "scale-105" : ""
+        }`}
+        style={{ backgroundColor: subCardArr.initialbgCol }}
+      >
+        <h2 className="text-gray-800 text-[27px] font-bold mb-2">
+          {subCardArr.title}
+        </h2>
+        <p className="text-gray-600 font-semibold text-[16px] sm:mr-8">
+          {subCardArr.subpara}
+        </p>
+        {isOnClick && (
+          <div
+            className="left-0 w-full rounded py-2 px-4 mt-4 mb-3"
+            style={{ backgroundColor: subCardArr.initialbgCol }}
+          >
+            <div className="grid grid-cols-2 gap-x-4 gap-y-2">
+              {subCardArr.childServices?.map((service, index) => (
+                <a
+                  key={index}
+                  href={`#${service}`}
+                  className="text-gray-800 hover:text-[#ef2168] text-sm"
+                >
+                  {service}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
@@ -153,12 +200,12 @@ const Navbar = () => {
         {" "}
         {/* Adjusted class for smaller screens */}
         <div className="container mx-auto flex items-center justify-between">
-          <a href="#" className="text-[#000000] text-xl font-bold">
+          <a href="#" className="text-[#000000] text-xl md:right-[100%] font-bold hidden md:block">
             InfoTechBrains
           </a>
           <button
             onClick={toggleMenu}
-            className="text-[#000000] hover:text-[#ef2168] focus:outline-none lg:hidden"
+            className="text-[#000000] hover:text-[#ef2168] ml-[90%] md:ml-[70%] focus:outline-none lg:hidden"
           >
             {/* Hamburger Icon */}
             <svg
@@ -178,7 +225,7 @@ const Navbar = () => {
           </button>
           <div
             className={`fixed top-0 left-0 w-screen h-screen bg-white z-50 overflow-y-auto ${
-              isOpen ? "block" : "hidden"
+              isOpen ? "block md:w-[50%] md:ml-[50%]" : "hidden"
             }`}
           >
             <button
@@ -189,7 +236,7 @@ const Navbar = () => {
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
-                className="w-[34px] h-[34px] md:w-[38px] md:h-[38px] m-2"
+                className="w-[34px] h-[34px] md:w-[38px] md:h-[38px] m-2 text-[#ef2168]"
                 xmlns="http://www.w3.org/2000/svg"
                 stroke="#000000"
                 strokeWidth="2"
@@ -219,7 +266,15 @@ const Navbar = () => {
                 <li>
                   <a
                     href="#"
-                    className="text-[#000000] text-[24px] font-semibold hover:text-[#ef2168] block"
+                    className="text-[#000000] text-xl font-bold md:hidden"
+                  >
+                    InfoTechBrains
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-[#000000] text-[24px] font-bold hover:text-[#ef2168] block"
                   >
                     Work
                   </a>
@@ -227,15 +282,17 @@ const Navbar = () => {
                 <li className="relative">
                   <button
                     onClick={handleServicesDropdownToggle}
-                    className={`text-[24px] font-semibold hover:text-[#ef2168] block ${
+                    className={`text-[24px] font-bold hover:text-[#ef2168] block ${
                       isServicesDropdownOpen
-                        ? "text-[#ef2168]"
+                        ? "text-[#ef2168] "
                         : "text-[#000000]"
                     }`}
                   >
                     Services
                     <svg
-                      className="icon ml-1 transition transform group-hover:rotate-180"
+                      className={`icon ml-1 transition transform ${
+                        isServicesDropdownOpen ? "rotate-180" : ""
+                      }`}
                       width="14"
                       height="16"
                       viewBox="0 0 320 512"
@@ -252,7 +309,7 @@ const Navbar = () => {
                     }`}
                   >
                     {ServicesSubCards.map((subCard, index) => (
-                      <Card
+                      <CardMob
                         key={index}
                         setIsDropdownOpen={setIsServicesDropdownOpen}
                         subCardArr={subCard}
@@ -263,13 +320,15 @@ const Navbar = () => {
                 <li className="relative">
                   <button
                     onClick={handleAboutDropdownToggle}
-                    className={`text-[24px] font-semibold hover:text-[#ef2168] block ${
+                    className={`text-[24px] font-bold hover:text-[#ef2168] block ${
                       isAboutDropdownOpen ? "text-[#ef2168]" : "text-[#000000]"
                     }`}
                   >
                     About
                     <svg
-                      className="icon ml-1 transition transform group-hover:rotate-180"
+                      className={`icon ml-1 transition transform ${
+                        isAboutDropdownOpen ? "rotate-180" : ""
+                      }`}
                       width="14"
                       height="16"
                       viewBox="0 0 320 512"
@@ -286,7 +345,7 @@ const Navbar = () => {
                     }`}
                   >
                     {AboutSubCards.map((subCard, index) => (
-                      <Card
+                      <CardMob
                         key={index}
                         setIsDropdownOpen={setIsAboutDropdownOpen}
                         subCardArr={subCard}
@@ -297,7 +356,7 @@ const Navbar = () => {
                 <li>
                   <a
                     href="#"
-                    className="text-[#000000] text-[24px] font-semibold hover:text-[#ef2168] block"
+                    className="text-[#000000] text-[24px] font-bold hover:text-[#ef2168] block"
                   >
                     Clients
                   </a>
@@ -305,7 +364,7 @@ const Navbar = () => {
                 <li>
                   <a
                     href="#"
-                    className="text-[#000000] text-[24px] font-semibold hover:text-[#ef2168] block"
+                    className="text-[#000000] text-[24px] font-bold hover:text-[#ef2168] block"
                   >
                     Knowledge
                   </a>
@@ -345,7 +404,9 @@ const Navbar = () => {
               >
                 Services
                 <svg
-                  className="icon ml-1 transition transform group-hover:rotate-180"
+                  className={`icon ml-1 transition transform ${
+                    isServicesDropdownOpen ? "rotate-180" : ""
+                  }`}
                   width="14"
                   height="16"
                   viewBox="0 0 320 512"
@@ -381,7 +442,9 @@ const Navbar = () => {
               >
                 About
                 <svg
-                  className="icon ml-1 transition transform group-hover:rotate-180"
+                  className={`icon ml-1 transition transform ${
+                    isAboutDropdownOpen ? "rotate-180" : ""
+                  }`}
                   width="14"
                   height="16"
                   viewBox="0 0 320 512"
