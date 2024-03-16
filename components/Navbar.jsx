@@ -224,7 +224,7 @@ const Navbar = () => {
             </svg>
           </button>
           <div
-            className={`fixed top-0 left-0 w-screen h-screen bg-white z-50 overflow-y-auto ${
+            className={`fixed top-0 left-0 w-screen shadow-xl h-screen bg-white z-50 overflow-y-auto ${
               isOpen ? "block md:w-[50%] md:ml-[50%]" : "hidden"
             }`}
           >
