@@ -1,17 +1,44 @@
-import React from 'react'
-import { MdKeyboardDoubleArrowDown } from "react-icons/md";
+import React from 'react';
+import { MdKeyboardDoubleArrowDown } from 'react-icons/md';
+import {servicedata} from '../../../data/servicedata';
+import Image from '@/node_modules/next/image';
+import { IoArrowForwardCircleOutline } from "react-icons/io5";
 
 const Services = () => {
   return (
-    <div>
-     <div className='heading py-24 items-center flex flex-col gap-6 sm:gap-10 px-2'>
-        <div className='text-center w-full font-semibold'>OUR PRODUCTS</div>
-        <div className='text-3xl text-slate-700 sm:text-4xl md:text-5xl text-center w-full font-semibold'>We’re a product and experience  creative agency</div>
-        <div><MdKeyboardDoubleArrowDown className="w-[24px] h-[24px]"/></div>
-     </div>
+    <section>
+      <div className="heading py-24 items-center flex flex-col gap-6 sm:gap-10 px-2">
+        <div className="text-center w-full font-semibold">OUR PRODUCTS</div>
+        <div className="text-3xl text-slate-700 sm:text-4xl md:text-5xl text-center w-full font-semibold">
+          We’re a product and experience creative agency
+        </div>
+        <div>
+          <MdKeyboardDoubleArrowDown className="w-[24px] h-[24px]" />
+        </div>
+      </div>
+      <div className='grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6   px-10'>
+        {servicedata.map((service, index) => (
+          <div key={index} className="shadow-xl " >
+            <a href={service.link} className="flex overflow-hidden flex-col gap-5 items-center">
+            <Image src={service.image} width={200} height={200} className="w-full h-auto hover:scale-110 transition-all duration-300"/>
+            <div className='px-3 py-10 flex flex-col  items-center gap-10'>
+            <p className='heading text-2xl font-bold text-slate-600 text-center'>{service.heading}</p>
+            
+            <p className='text-center text-slate-400 font-light'>{service.description}</p>
+            <span className='flex gap-3'>
+            <p>Read More</p>
+            <IoArrowForwardCircleOutline className="w-[24px] h-[24px] "/>
+            
+            </span>
+            
+            </div>
+            
+            </a>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
 
-    </div>
-  )
-}
-
-export default Services
+export default Services;
