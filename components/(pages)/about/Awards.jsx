@@ -31,12 +31,10 @@ const Awards = () => {
     ],
     []
   );
-  const table1 =
-    useTable({ columns, data });
+  const table1 = useTable({ columns, data });
   const data2 = React.useMemo(() => awards, []);
   const columns2 = React.useMemo(
     () => [
-     
       {
         Header: "",
         accessor: (row) => ({
@@ -45,7 +43,7 @@ const Awards = () => {
           project: row.project,
         }),
         id: "awardTypeProject",
-        minWidth: 320, 
+        minWidth: 320,
         Cell: ({ value }) => (
           <div>
             <p>{value.award}</p>
@@ -62,8 +60,7 @@ const Awards = () => {
     []
   );
 
-  const table2 =
-    useTable({ columns : columns2, data : data2 });
+  const table2 = useTable({ columns: columns2, data: data2 });
 
   return (
     <>
@@ -72,20 +69,22 @@ const Awards = () => {
           <p className="font-semibold">ACHIEVEMENTS</p>
           <div className="w-full flex flex-col md:flex-row md:items-center justify-between gap-5">
             <p className="md:text-6xl text-4xl font-bold">Our awards</p>
-            <span className="flex  items-center gap-3">
+            <a href="#viewmoreawards" className="viewgroup flex items-center gap-1">
               <p className="font-semibold">View More</p>
-              <IoArrowForwardSharp className="w-6 h-6 md:w-[24px] md:h-[24px]" />
-            </span>
+              <IoArrowForwardSharp className="arrow1 w-6 h-6 md:w-[24px] md:h-[24px]" />
+              <IoArrowForwardSharp className="arrow2 w-6 h-6 md:w-[24px] md:h-[24px]" />
+            </a>
           </div>
         </div>
 
         <div className="table-wrapper overflow-x-auto py-10">
           <table {...table1.getTableProps()} className="w-full border-collapse">
             <thead>
-              {table1.headerGroups.map((headerGroup) => (
-                <tr {...headerGroup.getHeaderGroupProps()}>
-                  {headerGroup.headers.map((column) => (
+              {table1.headerGroups.map((headerGroup, index) => (
+                <tr key={`header-group-${index}`} {...headerGroup.getHeaderGroupProps()}>
+                  {headerGroup.headers.map((column, columnIndex) => (
                     <th
+                      key={`header-${index}-${columnIndex}`}
                       {...column.getHeaderProps()}
                       className="px-4 py-2 md:px-6 md:py-3 border-b-2 border-gray-300 text-left text-sm md:text-md text-black font-bold uppercase"
                     >
@@ -99,12 +98,12 @@ const Awards = () => {
               {table1.rows.map((row, index) => {
                 table1.prepareRow(row);
                 return (
-                  <tr {...row.getRowProps()} key={index}>
-                    {row.cells.map((cell, index) => (
+                  <tr key={`row-${index}`} {...row.getRowProps()}>
+                    {row.cells.map((cell, cellIndex) => (
                       <td
+                        key={`cell-${index}-${cellIndex}`}
                         className="px-4 py-2 md:px-6 md:py-4 whitespace-nowrap text-sm md:text-md border-b-2 font-bold border-gray-300"
                         {...cell.getCellProps()}
-                        key={index}
                       >
                         {cell.render("Cell")}
                       </td>
@@ -121,20 +120,22 @@ const Awards = () => {
           <p className="font-semibold">ACHIEVEMENTS</p>
           <div className="w-full flex flex-col md:flex-row md:items-center justify-between gap-5">
             <p className="md:text-6xl text-4xl font-bold">Our awards</p>
-            <span className="flex items-center gap-3">
+            <a href="#viewmoreawards" className="viewgroup flex items-center gap-3">
               <p className="font-semibold">View More</p>
-              <IoArrowForwardSharp className="w-6 h-6 md:w-[24px] md:h-[24px]" />
-            </span>
+              <IoArrowForwardSharp className="arrow1 w-6 h-6 md:w-[24px] md:h-[24px]" />
+              <IoArrowForwardSharp className="arrow2 w-6 h-6 md:w-[24px] md:h-[24px]" />
+            </a>
           </div>
         </div>
 
         <div className="table-wrapper py-10 overflow-x-auto">
           <table {...table2.getTableProps()} className="w-full border-collapse">
             <thead>
-              {table2.headerGroups.map((headerGroup) => (
-                <tr {...headerGroup.getHeaderGroupProps()}>
-                  {headerGroup.headers.map((column) => (
+              {table2.headerGroups.map((headerGroup, index) => (
+                <tr key={`header-group-${index}`} {...headerGroup.getHeaderGroupProps()}>
+                  {headerGroup.headers.map((column, columnIndex) => (
                     <th
+                      key={`header-${index}-${columnIndex}`}
                       {...column.getHeaderProps()}
                       className="px-4 py-2 md:px-6 md:py-3 border-b-2 border-gray-300 text-left text-sm md:text-md text-black font-bold uppercase"
                     >
@@ -148,12 +149,12 @@ const Awards = () => {
               {table2.rows.map((row, index) => {
                 table2.prepareRow(row);
                 return (
-                  <tr {...row.getRowProps()} key={index}>
-                    {row.cells.map((cell, index) => (
+                  <tr key={`row-${index}`} {...row.getRowProps()}>
+                    {row.cells.map((cell, cellIndex) => (
                       <td
+                        key={`cell-${index}-${cellIndex}`}
                         className="px-4 py-2 md:px-6 md:py-4 whitespace-nowrap text-sm md:text-md border-b-2 font-bold border-gray-300"
                         {...cell.getCellProps()}
-                        key={index}
                       >
                         {cell.render("Cell")}
                       </td>
@@ -168,7 +169,5 @@ const Awards = () => {
     </>
   );
 };
-
-
 
 export default Awards;

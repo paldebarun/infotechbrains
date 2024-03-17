@@ -8,7 +8,7 @@ const Clients = () => {
             {
                 clientdata.map((client, index) => (
                     <div key={index} className="w-auto">
-                        <Image src={client.source} alt="img" className="opacity-30 hover:opacity-100 w-[85px] h-[40px] sm:w-[150px] sm:h-[70px] transition-opacity duration-200" width={100} height={100} />
+                        <Image src={client.source} alt={index} className="opacity-30 hover:opacity-100 w-[90px] h-[40px] sm:w-[155px] sm:h-[65px] transition-opacity duration-200" width={100} height={100} />
                     </div>
                 ))
             }

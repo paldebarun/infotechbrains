@@ -18,16 +18,19 @@ const Services = () => {
       </div>
       <div className='grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 px-10  xl:px-44'>
         {servicedata.map((service, index) => (
-          <div key={index} className="shadow-xl rounded-2xl " >
-            <a href={service.link} className="flex rounded-2xl overflow-hidden flex-col gap-5 items-center">
-            <Image src={service.image} width={200} height={200} className="w-full h-auto hover:scale-110 transition-all duration-300"/>
+          <div key={index} className=" shadow-xl rounded-2xl " >
+            <a href={service.link} className="servicecard flex rounded-2xl overflow-hidden flex-col gap-5 items-center">
+            <Image src={service.image} alt="serviceimages" width={200} height={200} className="w-full h-auto hover:scale-110 transition-all duration-300"/>
             <div className='px-3 py-10 flex flex-col  items-center gap-10'>
             <p className='heading text-2xl font-bold text-black text-center'>{service.heading}</p>
             
             <p className='text-center text-slate-400 font-light'>{service.description}</p>
-            <span className='flex gap-3'>
-            <p>Read More</p>
-            <IoArrowForwardCircleOutline className="w-[24px] h-[24px] "/>
+            <span className='flex gap-1 '>
+            
+            <p className='readmore font-bold'>Read More</p>
+            
+            
+            <IoArrowForwardCircleOutline className="servicecard_arrow w-[24px] h-[24px]  "/>
             
             </span>
             

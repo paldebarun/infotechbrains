@@ -32,21 +32,29 @@ const Hero = () => {
 
        <div className='progress-bars flex flex-col gap-6'>
           <div className='w-full flex flex-col gap-2'>
-            <h2 className='font-bold'>Design</h2>
-            <div className='w-11/12 relative rounded-full h-2  bg-slate-300'>
-            <div className='absolute h-full  bg-blue-500 rounded-full w-9/12'></div>
+          <div className='progressbarheading1 flex justify-between w-9/12 '>
+          <h2 className='font-bold'>Design</h2>
+            <h2 className='font-semibold progresspercent'>80%</h2>
+          </div>
+            
+            <div className='w-11/12 relative rounded-full h-1.5  bg-slate-300'>
+            <div className='progressbar_1 absolute h-full  bg-blue-500 rounded-full w-9/12'></div>
             </div>
 
 
           </div>
 
           <div className='w-full flex flex-col gap-2'>
-            <h2 className='font-bold'>
+          <div className='progressbarheading2 w-10/12 flex justify-between '>
+          <h2 className='font-bold'>
               Development
             </h2>
+            <h2 className='font-semibold progresspercent'>90%</h2>
+          </div>
             
-            <div className='w-11/12 relative rounded-full h-2  bg-slate-300'>
-            <div className='absolute h-full  bg-blue-500 rounded-full w-10/12'></div>
+            
+            <div className='w-11/12 relative rounded-full h-1.5  bg-slate-300'>
+            <div className='progressbar_2 absolute h-full  bg-blue-500 rounded-full w-10/12'></div>
             </div>
 
           </div>
@@ -56,8 +64,8 @@ const Hero = () => {
     </div>
 
     <div className='w-full flex justify-center  lg:w-9/12 h-auto'>
-    <Image src={heroimage2} width={300} height={200} className="translate-y-12 z-10 w-[170px]  sm:w-[300px] h-[200px] sm:h-[350px] translate-x-14 sm:translate-x-24 rounded-lg " />
-   <Image src={heroimage1} width={300} height={200} className="rounded-lg w-[170px] sm:w-[300px] h-[200px] sm:h-[350px]  -translate-x-12" />
+    <Image src={heroimage2} alt="heroimage1" width={300} height={200} className="translate-y-12 z-10 w-[170px]  sm:w-[300px] h-[200px] sm:h-[350px] translate-x-14 sm:translate-x-24 rounded-lg " />
+   <Image src={heroimage1} alt="heroimage2" width={300} height={200} className="rounded-lg w-[170px] sm:w-[300px] h-[200px] sm:h-[350px]  -translate-x-12" />
    
     </div>
 

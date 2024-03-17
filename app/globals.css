@@ -40,3 +40,167 @@
 body{
     overflow-x: hidden;
 }
+
+@keyframes progress1 {
+
+  from {
+    width:0px;
+  }
+
+  to {
+   
+    width:80%
+
+  }
+}
+
+@keyframes progress2 {
+
+  from {
+    width:0px;
+  }
+
+  to {
+   
+    width:90%
+
+  }
+}
+
+.progressbar_1{
+ 
+  animation-name: progress1;
+  animation-duration: 2s;
+  animation-timing-function:ease-in-out;
+  animation-iteration-count: initial;
+  animation-fill-mode: forwards;
+
+
+}
+
+.progressbar_2{
+
+  animation-name: progress2;
+  animation-duration: 2s;
+  animation-timing-function:ease-in-out;
+  animation-iteration-count: initial;
+  animation-fill-mode: forwards;
+
+}
+
+.readmore {
+  opacity: 0;
+
+  transform: translateX(-50%);
+  transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.servicecard:hover .readmore {
+  
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+
+
+.servicecard_arrow{
+  
+  transform: translateX(-190%);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.servicecard:hover .servicecard_arrow {
+ 
+  transform: translateX(0);
+}
+
+
+
+.viewgroup .arrow1{
+  opacity:0;
+  
+  transition: transform 0.5s ease-in-out,opacity 0.2s ease-in-out;
+  transform: translateX(-50%);
+}
+.viewgroup .arrow2 {
+  opacity:1;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out,opacity 0.2s ease-in-out; /* Smooth transition for transform */
+ 
+}
+
+
+
+.viewgroup:hover .arrow1 {
+  opacity:1;
+  transform: translateX(40%); /* Move arrow1 to its original position */
+}
+
+.viewgroup:hover .arrow2 {
+  
+  transform: translateX(43%); /* Move arrow2 to the right */
+  opacity: 0; /* Make arrow2 invisible */
+}
+
+@keyframes progressheading1{
+ from{
+    width:0;
+ }
+ to{
+  
+  width:75%
+
+ }
+}
+
+@keyframes progressheading2{
+  from{
+     width:0;
+  }
+  to{
+   
+   width:83%
+ 
+  }
+ }
+
+.progressbarheading1{
+
+  animation-name: progressheading1;
+  animation-duration: 2s;
+  animation-timing-function:ease-in-out;
+  animation-iteration-count: initial;
+  animation-fill-mode: forwards;
+
+}
+
+.progressbarheading2{
+
+  animation-name: progressheading2;
+  animation-duration: 2s;
+  animation-timing-function:ease-in-out;
+  animation-iteration-count: initial;
+  animation-fill-mode: forwards;
+
+}
+
+@keyframes progresspercentanimation{
+  from{
+    opacity:0;
+  }
+  to{
+    opacity:100%;
+  }
+}
+
+.progresspercent{
+  animation-name: progresspercentanimation;
+  animation-duration: 5s;
+  animation-timing-function:ease-in-out;
+  animation-iteration-count: initial;
+  animation-fill-mode: forwards;
+
+}
+
+
