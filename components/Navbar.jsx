@@ -147,10 +147,10 @@ const CardMob = ({ setIsDropdownOpen, subCardArr }) => {
         </p>
         {isOnClick && (
           <div
-            className="left-0 w-full rounded py-2 px-4 mt-4 mb-3"
+            className="left-0 w-full rounded py-2 px-2 mt-4 mb-3"
             style={{ backgroundColor: subCardArr.initialbgCol }}
           >
-            <div className="grid grid-cols-2 gap-x-4 gap-y-2">
+            <div className="grid grid-cols-2 gap-x-3 gap-y-2">
               {subCardArr.childServices?.map((service, index) => (
                 <a
                   key={index}
@@ -196,11 +196,15 @@ const Navbar = () => {
 
   return (
     <>
+      {/* mobile navbar */}
       <nav className="bg-[#ffffff] py-4 border-b-2 border-[#000000] lg:hidden">
         {" "}
         {/* Adjusted class for smaller screens */}
         <div className="container mx-auto flex items-center justify-between">
-          <a href="#" className="text-[#000000] text-xl md:right-[100%] font-bold hidden md:block">
+          <a
+            href="#"
+            className="text-[#000000] text-xl md:right-[100%] font-bold hidden md:block"
+          >
             InfoTechBrains
           </a>
           <button
@@ -230,13 +234,13 @@ const Navbar = () => {
           >
             <button
               onClick={() => setIsOpen(false)} // Use a function to set isOpen to false
-              className="text-[#000000] duration-75 hover:text-[#ef2168] focus:outline-none lg:hidden"
+              className="text-[#000000] duration-75 md:ml-[87%] hover:text-[#ef2168] focus:outline-none lg:hidden"
             >
               {/* Cross Icon */}
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
-                className="w-[34px] h-[34px] md:w-[38px] md:h-[38px] m-2 text-[#ef2168]"
+                className="w-[34px] h-[34px] md:w-[38px]  md:h-[38px] m-2 text-[#ef2168]"
                 xmlns="http://www.w3.org/2000/svg"
                 stroke="#000000"
                 strokeWidth="2"
@@ -274,7 +278,7 @@ const Navbar = () => {
                 <li>
                   <a
                     href="#"
-                    className="text-[#000000] text-[24px] font-bold hover:text-[#ef2168] block"
+                    className="text-[#000000] text-[22px] font-bold hover:text-[#ef2168] block"
                   >
                     Work
                   </a>
@@ -282,7 +286,7 @@ const Navbar = () => {
                 <li className="relative">
                   <button
                     onClick={handleServicesDropdownToggle}
-                    className={`text-[24px] font-bold hover:text-[#ef2168] block ${
+                    className={`text-[22px] font-bold hover:text-[#ef2168] block ${
                       isServicesDropdownOpen
                         ? "text-[#ef2168] "
                         : "text-[#000000]"
@@ -320,7 +324,7 @@ const Navbar = () => {
                 <li className="relative">
                   <button
                     onClick={handleAboutDropdownToggle}
-                    className={`text-[24px] font-bold hover:text-[#ef2168] block ${
+                    className={`text-[22px] font-bold hover:text-[#ef2168] block ${
                       isAboutDropdownOpen ? "text-[#ef2168]" : "text-[#000000]"
                     }`}
                   >
@@ -356,7 +360,7 @@ const Navbar = () => {
                 <li>
                   <a
                     href="#"
-                    className="text-[#000000] text-[24px] font-bold hover:text-[#ef2168] block"
+                    className="text-[#000000] text-[22px] font-bold hover:text-[#ef2168] block"
                   >
                     Clients
                   </a>
@@ -364,13 +368,13 @@ const Navbar = () => {
                 <li>
                   <a
                     href="#"
-                    className="text-[#000000] text-[24px] font-bold hover:text-[#ef2168] block"
+                    className="text-[#000000] text-[22px] font-bold hover:text-[#ef2168] block"
                   >
                     Knowledge
                   </a>
                 </li>
                 <li>
-                  <div class="button">
+                  <div className="button">
                     <span class="label-up">Contact</span>
                     <span class="label-up">Contact</span>
                   </div>
@@ -380,15 +384,16 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+      {/* desktop navbar */}
       <nav className="bg-[#ffffff] py-4 border-b-2 border-[#000000] hidden lg:block">
-        <div className="container mx-auto flex items-center justify-between">
-          <a href="#" className="text-[#000000] text-xl font-bold">
+        <div className="container mx-auto flex items-right justify-between">
+          <a href="#" className="text-[#000000] items-center text-xl font-bold">
             InfoTechBrains
           </a>
           <div className="flex items-center justify-center flex-1">
             <a
               href="#"
-              className="text-[#000000] mr-6 hover:text-[#ef2168] ml-2"
+              className="text-[#000000] mr-7 hover:text-[#ef2168] ml-2"
               onClick={handleNavLinkClick}
             >
               Work
@@ -398,7 +403,7 @@ const Navbar = () => {
               onClick={handleServicesDropdownToggle}
             >
               <button
-                className={`mr-6 hover:text-[#ef2168] flex items-center ml-2 ${
+                className={`mr-7 hover:text-[#ef2168] flex items-center ml-2 ${
                   isServicesDropdownOpen ? "text-[#ef2168]" : "text-[#000000]"
                 }`}
               >
@@ -417,26 +422,37 @@ const Navbar = () => {
                 </svg>
               </button>
               <div
-                className={`absolute w-[1562px] mr-5 bg-white border-b-2 border-[#000000] py-2 px-4 top-12 left-[170px] transform -translate-x-1/2 ${
+                className={`absolute mr-5 bg-white border-b-2 border-[#000000] py-2 px-4 top-12 ${
                   isServicesDropdownOpen
                     ? "opacity-100 visible"
                     : "opacity-0 invisible"
                 } transition duration-300`}
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fill, minmax(400px, 2fr))", 
+                  gap: "1rem",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  maxWidth: "100vw",
+                  minWidth: "100vw",
+                  left: "283%",
+                  transform: "translateX(-60%)",
+                }}
               >
-                <div className="flex flex-row justify-center">
-                  {ServicesSubCards?.map((subCard, index) => (
-                    <Card
-                      key={index}
-                      setIsDropdownOpen={setIsServicesDropdownOpen}
-                      subCardArr={subCard}
-                    />
-                  ))}
-                </div>
+                {/* <div className="flex flex-row justify-center"> */}
+                {ServicesSubCards?.map((subCard, index) => (
+                  <Card
+                    key={index}
+                    setIsDropdownOpen={setIsServicesDropdownOpen}
+                    subCardArr={subCard}
+                  />
+                ))}
+                {/* </div> */}
               </div>
             </div>
             <div className="relative group" onClick={handleAboutDropdownToggle}>
               <button
-                className={`mr-6 hover:text-[#ef2168] flex items-center ml-2 ${
+                className={`mr-7 hover:text-[#ef2168] flex items-center ml-2 ${
                   isAboutDropdownOpen ? "text-[#ef2168]" : "text-[#000000]"
                 }`}
               >
@@ -455,38 +471,49 @@ const Navbar = () => {
                 </svg>
               </button>
               <div
-                className={`absolute w-[1562px] bg-white border-b-2 border-[#000000] py-2 px-4 top-12 left-[20%] transform -translate-x-1/2 ${
+                className={`absolute mr-5 bg-white border-b-2 border-[#000000] py-2 px-4 top-12 ${
                   isAboutDropdownOpen
                     ? "opacity-100 visible"
                     : "opacity-0 invisible"
                 } transition duration-300`}
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fill, minmax(400px, 2fr))", 
+                  gap: "1rem",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  maxWidth: "100vw",
+                  minWidth: "100vw",
+                  left: "220%",
+                  transform: "translateX(-60%)",
+                }}
               >
-                <div className="flex flex-row justify-center">
-                  {AboutSubCards.map((subCard, index) => (
-                    <Card
-                      key={index}
-                      setIsDropdownOpen={setIsAboutDropdownOpen}
-                      subCardArr={subCard}
-                    />
-                  ))}
-                </div>
+                {/* <div className="flex flex-row justify-center"> */}
+                {AboutSubCards?.map((subCard, index) => (
+                  <Card
+                    key={index}
+                    setIsDropdownOpen={setIsAboutDropdownOpen}
+                    subCardArr={subCard}
+                  />
+                ))}
+                {/* </div> */}
               </div>
             </div>
             <a
               href="#"
-              className="text-[#000000] mr-6 hover:text-[#ef2168] ml-2"
+              className="text-[#000000] mr-7 hover:text-[#ef2168] ml-2"
               onClick={handleNavLinkClick}
             >
               Clients
             </a>
             <a
               href="#"
-              className="text-[#000000] mr-6 hover:text-[#ef2168] ml-2"
+              className="text-[#000000] mr-7 hover:text-[#ef2168] ml-2"
               onClick={handleNavLinkClick}
             >
               Knowledge
             </a>
-            <div class="button">
+            <div className="button ml-10">
               <span class="label-up">Contact</span>
               <span class="label-up">Contact</span>
             </div>
