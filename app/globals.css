@@ -196,7 +196,7 @@ body{
 
 .progresspercent{
   animation-name: progresspercentanimation;
-  animation-duration: 5s;
+  animation-duration: 3s;
   animation-timing-function:ease-in-out;
   animation-iteration-count: initial;
   animation-fill-mode: forwards;

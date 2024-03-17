@@ -102,7 +102,7 @@ const Awards = () => {
                     {row.cells.map((cell, cellIndex) => (
                       <td
                         key={`cell-${index}-${cellIndex}`}
-                        className="px-4 py-2 md:px-6 md:py-4 whitespace-nowrap text-sm md:text-md border-b-2 font-bold border-gray-300"
+                        className="px-4 py-2 md:px-6 md:py-4 whitespace-nowrap text-sm md:text-md border-b-2 font-semibold border-gray-300"
                         {...cell.getCellProps()}
                       >
                         {cell.render("Cell")}
@@ -153,7 +153,7 @@ const Awards = () => {
                     {row.cells.map((cell, cellIndex) => (
                       <td
                         key={`cell-${index}-${cellIndex}`}
-                        className="px-4 py-2 md:px-6 md:py-4 whitespace-nowrap text-sm md:text-md border-b-2 font-bold border-gray-300"
+                        className="px-4 py-2 md:px-6 md:py-4 whitespace-nowrap text-sm md:text-md border-b-2 font-semibold border-gray-300"
                         {...cell.getCellProps()}
                       >
                         {cell.render("Cell")}
