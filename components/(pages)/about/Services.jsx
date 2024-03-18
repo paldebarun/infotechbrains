@@ -16,7 +16,7 @@ const Services = () => {
           <MdKeyboardDoubleArrowDown className="w-[24px] h-[24px]" />
         </div>
       </div>
-      <div className='grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 px-10  xl:px-44'>
+      <div className='grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 px-2 sm:px-10  xl:px-44'>
         {servicedata.map((service, index) => (
           <div key={index} className=" shadow-xl rounded-2xl " >
             <a href={service.link} className="servicecard flex rounded-2xl overflow-hidden flex-col gap-5 items-center">

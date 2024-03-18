@@ -34,10 +34,4 @@ export const awards=[
   
   },
 
-
-
-
-
-
-
 ]

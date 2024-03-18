@@ -17,21 +17,21 @@ const Hero = () => {
         </div>
 </div>
 
-  <div className='w-full px-10 py-12 sm:py-24 flex flex-col gap-16 lg:gap-0  lg:flex-row'>
-    <div className='w-full lg:w-6/12 sm:px-6 flex flex-col gap-6'>
-       <div className='font-semibold text-sm'>DIGITAL SAFETY</div>
-       <h1 className='font-semibold text-2xl sm:text-3xl md:text-5xl'>
+  <div className='w-full px-2 py-12 sm:py-24 flex flex-col gap-16 lg:gap-0  lg:flex-row'>
+    <div className='w-full lg:w-6/12 px-2 sm:px-6 flex flex-col gap-6'>
+       <div className='font-semibold text-sm text-center sm:text-start'>DIGITAL SAFETY</div>
+       <h1 className='font-semibold text-2xl sm:text-3xl md:text-5xl text-center sm:text-start'>
        We revolutionize fintech systems
        </h1>
 
        <div className='w-full '>
-       <p className='text-slate-400 w-11/12'>
+       <p className='text-slate-400 w-11/12 mx-auto sm:mx-0 text-center sm:text-start'>
        Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit sed quia.
        </p>
        </div>
 
-       <div className='progress-bars flex flex-col gap-6'>
-          <div className='w-full flex flex-col gap-2'>
+       <div className='progress-bars flex w-full  flex-col items-center gap-6'>
+          <div className='w-full flex flex-col  gap-2'>
           <div className='progressbarheading1 flex justify-between w-9/12 '>
           <h2 className='font-bold'>Design</h2>
             <h2 className='font-semibold progresspercent'>80%</h2>
@@ -40,10 +40,10 @@ const Hero = () => {
             <div className='w-11/12 relative rounded-full h-1.5  bg-slate-300'>
             <div className='progressbar_1 absolute h-full  bg-blue-500 rounded-full w-9/12'></div>
             </div>
-
-
+            
+            
           </div>
-
+          
           <div className='w-full flex flex-col gap-2'>
           <div className='progressbarheading2 w-10/12 flex justify-between '>
           <h2 className='font-bold'>
@@ -72,23 +72,23 @@ const Hero = () => {
 
   </div>
 
-  <div className='flex lg:flex-row flex-col gap-10 lg:gap-6 justify-between  sm:px-16 py-16 items-center'>
-    
-    <div className='flex flex-col gap-5 w-10/12 lg:w-7/12'>
-      <span className='text-sm font-semibold'>CORPORATE SERVICE</span>
-      <span><h1 className='text-3xl md:text-6xl font-semibold text-black'> Meet our top clients and partners</h1></span>
+  <div className='flex lg:flex-row flex-col gap-10 lg:gap-6 justify-between px-1 sm:px-16 py-16 items-center'>
+                                                                      
+    <div className='flex flex-col gap-5 w-11/12 lg:w-7/12'>
+      <span className='text-sm font-semibold text-center sm:text-start'>CORPORATE SERVICE</span>
+      <span><h1 className='text-3xl md:text-6xl font-semibold text-black text-center sm:text-start'> Meet our top clients and partners</h1></span>
     </div>
 
     
 
-    <div className='flex flex-col gap-6 w-10/12 lg:w-7/12'>
+    <div className='flex flex-col gap-6 w-11/12 lg:w-7/12'>
 
     <div>
-      <p className='text-slate-500'>Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      <p className='text-slate-500 text-center sm:text-start'>Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
     </div>
 
     <div>
-      <p className='text-slate-500'>Adipiscing elit, sed do eiusmod tempor incididunt utn labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+      <p className='text-slate-500 text-center sm:text-start'>Adipiscing elit, sed do eiusmod tempor incididunt utn labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
     </div>
 
     </div>
