@@ -172,6 +172,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
+  const containerRef = useRef(null);
 
   const handleServicesDropdownToggle = () => {
     setIsServicesDropdownOpen(!isServicesDropdownOpen);
@@ -194,13 +195,29 @@ const Navbar = () => {
     setIsAboutDropdownOpen(false);
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (containerRef.current && !containerRef.current.contains(event.target)) {
+        setIsOpen(false);
+        setIsServicesDropdownOpen(false);
+        setIsAboutDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <>
       {/* mobile navbar */}
       <nav className="bg-[#ffffff] py-4 border-b-2 border-[#000000] lg:hidden">
         {" "}
         {/* Adjusted class for smaller screens */}
-        <div className="container mx-auto flex items-center justify-between">
+        <div ref={containerRef} className="container mx-auto flex items-center justify-between">
           <a
             href="#"
             className="text-[#000000] text-xl md:right-[100%] font-bold hidden md:block"
@@ -386,7 +403,7 @@ const Navbar = () => {
       </nav>
       {/* desktop navbar */}
       <nav className="bg-[#ffffff] py-4 border-b-2 border-[#000000] hidden lg:block">
-        <div className="container mx-auto flex items-right justify-between">
+        <div ref={containerRef} className="container mx-auto flex items-right justify-between">
           <a href="#" className="text-[#000000] items-center text-xl font-bold">
             InfoTechBrains
           </a>
