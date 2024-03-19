@@ -172,7 +172,8 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
-  const containerRef = useRef(null);
+  const containerRef1 = useRef(null);
+  const containerRef2 = useRef(null);
 
   const handleServicesDropdownToggle = () => {
     setIsServicesDropdownOpen(!isServicesDropdownOpen);
@@ -197,7 +198,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (containerRef.current && !containerRef.current.contains(event.target)) {
+      if (containerRef1.current || containerRef2.current && !containerRef1.current.contains(event.target || !containerRef2.current.contains(event.target))) {
         setIsOpen(false);
         setIsServicesDropdownOpen(false);
         setIsAboutDropdownOpen(false);
@@ -214,10 +215,10 @@ const Navbar = () => {
   return (
     <>
       {/* mobile navbar */}
-      <nav className="bg-[#ffffff] py-4 border-b-2 border-[#000000] lg:hidden">
+      <nav ref={containerRef1} className="bg-[#ffffff] py-4 border-b-2 border-[#000000] lg:hidden">
         {" "}
         {/* Adjusted class for smaller screens */}
-        <div ref={containerRef} className="container mx-auto flex items-center justify-between">
+        <div className="container mx-auto flex items-center justify-between">
           <a
             href="#"
             className="text-[#000000] text-xl md:right-[100%] font-bold hidden md:block"
@@ -251,13 +252,13 @@ const Navbar = () => {
           >
             <button
               onClick={() => setIsOpen(false)} // Use a function to set isOpen to false
-              className="text-[#000000] duration-75 md:ml-[87%] hover:text-[#ef2168] focus:outline-none lg:hidden"
+              className="text-[#000000] duration-75 ml-[90%] md:ml-[87%] hover:text-[#ef2168] focus:outline-none lg:hidden"
             >
               {/* Cross Icon */}
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
-                className="w-[34px] h-[34px] md:w-[38px]  md:h-[38px] m-2 text-[#ef2168]"
+                className="w-[34px] h-[34px] md:w-[38px] md:h-[38px] m-2 text-[#ef2168]"
                 xmlns="http://www.w3.org/2000/svg"
                 stroke="#000000"
                 strokeWidth="2"
@@ -403,7 +404,7 @@ const Navbar = () => {
       </nav>
       {/* desktop navbar */}
       <nav className="bg-[#ffffff] py-4 border-b-2 border-[#000000] hidden lg:block">
-        <div ref={containerRef} className="container mx-auto flex items-right justify-between">
+        <div ref={containerRef2} className="container mx-auto flex items-right justify-between">
           <a href="#" className="text-[#000000] items-center text-xl font-bold">
             InfoTechBrains
           </a>
@@ -418,7 +419,7 @@ const Navbar = () => {
             <div
               className="relative group"
               onClick={handleServicesDropdownToggle}
-            >
+              >
               <button
                 className={`mr-7 hover:text-[#ef2168] flex items-center ml-2 ${
                   isServicesDropdownOpen ? "text-[#ef2168]" : "text-[#000000]"
@@ -439,7 +440,7 @@ const Navbar = () => {
                 </svg>
               </button>
               <div
-                className={`absolute mr-5 bg-white border-b-2 border-[#000000] py-2 px-4 top-12 ${
+                className={`absolute-dropdown mr-5 bg-white border-b-2 border-[#000000] py-2 px-4 top-12 ${
                   isServicesDropdownOpen
                     ? "opacity-100 visible"
                     : "opacity-0 invisible"
@@ -488,7 +489,7 @@ const Navbar = () => {
                 </svg>
               </button>
               <div
-                className={`absolute mr-5 bg-white border-b-2 border-[#000000] py-2 px-4 top-12 ${
+                className={`absolute-dropdown mr-5 bg-white border-b-2 border-[#000000] py-2 px-4 top-12 ${
                   isAboutDropdownOpen
                     ? "opacity-100 visible"
                     : "opacity-0 invisible"
