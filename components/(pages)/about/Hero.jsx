@@ -18,7 +18,7 @@ const Hero = () => {
 </div>
 
   <div className='w-full px-1.5 py-12 sm:py-24 flex flex-col gap-16 lg:gap-0  lg:flex-row'>
-    <div className='w-full lg:w-6/12 px-2 sm:px-6 flex flex-col gap-6'>
+    <div className='w-full lg:w-6/12 px-2 sm:px-6 md:px-14 flex flex-col gap-6'>
        <div className='font-semibold text-sm text-center sm:text-start'>DIGITAL SAFETY</div>
        <h1 className='font-semibold text-2xl sm:text-3xl md:text-5xl text-center sm:text-start'>
        We revolutionize fintech systems
@@ -63,11 +63,30 @@ const Hero = () => {
 
     </div>
 
-    <div className='w-full flex justify-center  lg:w-9/12 h-auto'>
+    {/* <div className='w-full flex justify-center  lg:w-9/12 h-auto'>
     <Image src={heroimage2} alt="heroimage1" width={300} height={200} className="translate-y-12 z-10 w-[170px]  sm:w-[300px] h-[200px] sm:h-[350px] translate-x-14 sm:translate-x-24 rounded-lg " />
    <Image src={heroimage1} alt="heroimage2" width={300} height={200} className="rounded-lg w-[170px] sm:w-[300px] h-[200px] sm:h-[350px]  -translate-x-12" />
    
-    </div>
+    </div> */}
+    <div className='w-full flex justify-center lg:w-9/12 h-auto'>
+  <Image 
+    src={heroimage2} 
+    alt="heroimage1" 
+    width={300} 
+    height={200} 
+    className="translate-y-12 z-10 w-[170px] sm:w-[300px] h-[200px] sm:h-[350px] translate-x-14 sm:translate-x-24 rounded-lg" 
+    style={{ width: 'auto' }}  // Add this line to maintain aspect ratio
+  />
+  <Image 
+    src={heroimage1} 
+    alt="heroimage2" 
+    width={300} 
+    height={200} 
+    className="rounded-lg w-[170px] sm:w-[300px] h-[200px] sm:h-[350px] -translate-x-12" 
+    style={{ width: 'auto' }}  // Add this line to maintain aspect ratio
+  />
+</div>
+
 
 
   </div>
