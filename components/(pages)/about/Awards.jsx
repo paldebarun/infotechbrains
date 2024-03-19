@@ -64,7 +64,8 @@ const Awards = () => {
 
   return (
     <>
-      <section className="py-24 md:block hidden px-4 md:px-10">
+    <div className="h-52 w-full"></div>
+      {/* <section className="py-24 md:block hidden px-4 md:px-10">
         <div className="heading flex flex-col gap-4">
           <p className="font-semibold">ACHIEVEMENTS</p>
           <div className="w-full flex flex-col md:flex-row md:items-center justify-between gap-5">
@@ -165,7 +166,7 @@ const Awards = () => {
             </tbody>
           </table>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };
