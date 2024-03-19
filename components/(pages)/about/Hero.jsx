@@ -17,7 +17,7 @@ const Hero = () => {
         </div>
 </div>
 
-  <div className='w-full px-2 py-12 sm:py-24 flex flex-col gap-16 lg:gap-0  lg:flex-row'>
+  <div className='w-full px-1.5 py-12 sm:py-24 flex flex-col gap-16 lg:gap-0  lg:flex-row'>
     <div className='w-full lg:w-6/12 px-2 sm:px-6 flex flex-col gap-6'>
        <div className='font-semibold text-sm text-center sm:text-start'>DIGITAL SAFETY</div>
        <h1 className='font-semibold text-2xl sm:text-3xl md:text-5xl text-center sm:text-start'>
@@ -25,7 +25,7 @@ const Hero = () => {
        </h1>
 
        <div className='w-full '>
-       <p className='text-slate-400 w-11/12 mx-auto sm:mx-0 text-center sm:text-start'>
+       <p className='text-slate-400 w-full  sm:mx-0 text-center sm:text-start'>
        Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit sed quia.
        </p>
        </div>
@@ -72,16 +72,16 @@ const Hero = () => {
 
   </div>
 
-  <div className='flex lg:flex-row flex-col gap-10 lg:gap-6 justify-between px-1 sm:px-16 py-16 items-center'>
+  <div className='flex lg:flex-row flex-col gap-10 lg:gap-6 justify-between px-0.5 sm:px-16 py-16 items-center'>
                                                                       
-    <div className='flex flex-col gap-5 w-11/12 lg:w-7/12'>
+    <div className='flex flex-col gap-5 w-full lg:w-7/12'>
       <span className='text-sm font-semibold text-center sm:text-start'>CORPORATE SERVICE</span>
       <span><h1 className='text-3xl md:text-6xl font-semibold text-black text-center sm:text-start'> Meet our top clients and partners</h1></span>
     </div>
 
     
 
-    <div className='flex flex-col gap-6 w-11/12 lg:w-7/12'>
+    <div className='flex flex-col gap-6 w-full lg:w-7/12'>
 
     <div>
       <p className='text-slate-500 text-center sm:text-start'>Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
