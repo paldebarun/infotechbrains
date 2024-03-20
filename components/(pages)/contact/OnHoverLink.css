@@ -41,3 +41,7 @@
     transform: scaleX(1);
     transform-origin: bottom left;
   }
+
+  input[type="checkbox"] {
+    accent-color: #70af69; /* Change to your desired color */
+  }

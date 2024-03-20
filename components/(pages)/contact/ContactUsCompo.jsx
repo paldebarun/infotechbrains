@@ -101,8 +101,8 @@ const ContactUsCompo = () => {
           src="https://www.google.com/maps/embed?origin=mfe&pb=!1m4!2m1!1s51.503325,-0.119545!5e0!6i12"
         ></iframe>{" "}
       </div>
-      <div className="lg:m-[100px] m-4 flex lg:flex-row flex-col">
-        <div className="lg:m-3">
+      <div className="lg:m-[90px] m-4 mb-4 flex md:flex-row flex-col">
+        <div className="lg:m-3 md:mr-8 md:w-full">
           <section className="mt-12 mb-4">
             <p
               className="uppercase text-[13px] text-[#696969] font-semibold py-1 lg:text-[15px] lg:leading-[18px] leading-[16px] md:tracking-[1.8px] tracking-normal lg:m-3"
@@ -111,7 +111,7 @@ const ContactUsCompo = () => {
               Contact Us
             </p>
             <h1
-              className="lg:text-[57px] md:text-[35px] py-1 text-[30px] font-bold text-[#1f1f1f] lg:leading-[68px] leading-[34px] tracking-[-1px] lg:m-3"
+              className="lg:text-[57px] md:text-[38px] py-1 text-[30px] font-bold text-[#1f1f1f] lg:leading-[68px] md:leading-[42px] leading-[34px] md:tracking-[-1.8px] tracking-[-1px] lg:m-3"
               style={{ fontFamily: "stolzl, sans-serif" }}
             >
               Have questions? Get in touch!
@@ -147,83 +147,96 @@ const ContactUsCompo = () => {
           </section>
         </div>
         <div>
-          <form className="mt-8">
-            <div className="hover-underline-animation flex items-center mb-4 border-b-2 rounded-md py-2 px-3 w-full relative">
-              <FiUser
+          <form className="mt-8 md:w-full">
+            <div className="sm:flex sm:flex-row">
+              <div className="sm:mr-2 md:mr-3 lg:mr-5">
+                <div className="hover-underline-animation flex items-center mb-5 md:mb-7 border-b-2 py-2 px-3 w-full relative">
+                  <FiUser
+                    className="absolute left-2 top-1/2 transform -translate-y-1/2"
+                    size={22}
+                    color="#696969"
+                  />
+                  <input
+                    className="border-none focus:outline-none w-full pl-10 font-normal"
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Name"
+                  />
+                </div>
+                <div className="hover-underline-animation flex items-center mb-5 md:mb-7 border-b-2 py-2 px-3 w-full relative">
+                  <FiMail
+                    className="absolute left-2 top-1/2 transform -translate-y-1/2"
+                    size={22}
+                    color="#696969"
+                  />
+                  <input
+                    className="border-none focus:outline-none w-full pl-10 font-normal"
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Email Address"
+                  />
+                </div>
+              </div>
+              <div className="sm:ml-2 md:ml-3 lg:ml-5">
+                <div className="hover-underline-animation flex items-center mb-5 md:mb-7 border-b-2 py-2 px-3 w-full relative">
+                  <FiPhone
+                    className="absolute left-2 top-1/2 transform -translate-y-1/2"
+                    size={22}
+                    color="#696969"
+                  />
+                  <input
+                    className="border-none focus:outline-none w-full pl-10 font-normal"
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="Phone"
+                  />
+                </div>
+                <div className="hover-underline-animation flex items-center mb-5 md:mb-7 border-b-2 py-2 px-3 w-full relative">
+                  <FiFileText
+                    className="absolute left-2 top-1/2 transform -translate-y-1/2"
+                    size={22}
+                    color="#696969"
+                  />
+                  <input
+                    className="border-none focus:outline-none w-full pl-10 font-normal"
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    placeholder="Subject"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="hover-underline-animation flex items-center mb-5 border-b-2 py-2 px-3 w-full relative">
+              <FiMessageSquare
                 className="absolute left-2 top-1/2 transform -translate-y-1/2"
                 size={22}
                 color="#696969"
               />
               <input
-                className="border-none focus:outline-none w-full pl-10"
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Name"
-                />
-            </div>
-            <div className="hover-underline-animation flex items-center mb-4 border-b-2 rounded-md py-2 px-3 w-full relative">
-              <FiMail
-                className="absolute left-2 top-1/2 transform -translate-y-1/2"
-                size={22}
-                color="#696969"
-              />
-              <input
-                className="border-none focus:outline-none w-full pl-10"
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Email Address"
-                />
-            </div>
-            <div className="hover-underline-animation flex items-center mb-4 border-b-2 rounded-md py-2 px-3 w-full relative">
-              <FiPhone
-                className="absolute left-2 top-1/2 transform -translate-y-1/2"
-                size={22}
-                color="#696969"
-              />
-              <input
-                className="border-none focus:outline-none w-full pl-10"
-                type="tel"
-                id="phone" 
-                name="phone"
-                placeholder="Phone"
-                />
-            </div>
-            <div className="hover-underline-animation flex items-center mb-4 border-b-2 rounded-md py-2 px-3 w-full relative">
-              <FiFileText
-                className="absolute left-2 top-1/2 transform -translate-y-1/2"
-                size={22}
-                color="#696969"
-              />
-              <input
-                className="border-none focus:outline-none w-full pl-10"
-                type="text" 
-                id="subject" 
-                name="subject" 
-                placeholder="Subject"
-                />
-            </div>
-            <div className="hover-underline-animation flex items-center mb-4 border-b-2 rounded-md py-2 px-3 w-full relative">
-              <FiMessageSquare className="absolute left-2 top-1/2 transform -translate-y-1/2"
-                size={22}
-                color="#696969" />
-              <textarea
-                className="border-none focus:outline-none w-full pl-10"
+                className="border-none focus:outline-none w-full pl-10 font-normal h-[36px]"
                 id="message"
                 name="message"
-                rows="4"
+                // rows="4"
                 placeholder="How can we help you? Feel free to get in touch!"
-              ></textarea>
+              />
             </div>
-            <div className="mb-4 flex items-center">
-              <input className="mr-2" type="checkbox" id="terms" name="terms" />
+            <div className="mb-5 flex items-center">
+              <input
+                className="check mr-2"
+                type="checkbox"
+                id="terms"
+                name="terms"
+              />
               <label className="text-[#696969] text-sm" htmlFor="terms">
                 I accept that my data is <a href="#privacy_policy">collected</a>
               </label>
             </div>
             <button
-              className="bg-[#70af69] text-white py-2 px-6 rounded-[25px] hover:bg-green-600 transition-colors duration-300"
+              className="bg-[#70af69] text-white py-2 px-6 rounded-[25px] hover:bg-[#63975e] transition-colors duration-300"
               type="submit"
             >
               <span className="flex items-center">
@@ -233,6 +246,128 @@ const ContactUsCompo = () => {
             </button>
           </form>
         </div>
+      </div>
+      <div
+        className="text-[#1f1f1f] m-8"
+        style={{ fontFamily: "Inter, sans-serif" }}
+      >
+        <h3 className="text-[40px] lg:text-[42px] leading-[46px]">
+          Our core values
+        </h3>
+        <div className="flex md:flex-row flex-col m-3">
+          <section className="border-[1px] md:border-r-[0px] border-[#121] mb-3 h-[412px] md:h-[460px] lg:h-[420px]">
+            <div className="flex items-center justify-start m-4">
+              <Image src="/corevalues1.png" width="64" height="64" />
+            </div>
+            <div className="m-8">
+              <h4 className="text-[30px] lg:text-[23.4px] leading-[46px] md:leading-[40px] lg:leading-[32px] mb-4">
+                Flexibility
+              </h4>
+              <ol className="list-disc text-[16px] leading-[28px] md:leading-[20px] lg:leading-[21px] tracking-normal px-6">
+                <li className="py-2">
+                  We place a priority on communication and trust rather than
+                  formalities.
+                </li>
+                <li className="py-2">
+                  Being ready for changes is much more important than following
+                  the ground plan.
+                </li>
+              </ol>
+            </div>
+          </section>
+          <section className="border-[1px] md:border-r-[0px] border-[#121] mb-3 h-[412px] md:h-[460px] lg:h-[420px]">
+            <div className="flex items-center justify-start m-4">
+              <Image src="/corevalues2.png" width="64" height="64" />
+            </div>
+            <div className="m-8">
+              <h4 className="text-[30px] lg:text-[23.4px] leading-[46px] md:leading-[40px] lg:leading-[32px] mb-4">
+                Cooperation
+              </h4>
+              <ol className="list-disc text-[16px] leading-[28px] md:leading-[20px] lg:leading-[21px] tracking-normal px-6">
+                <li className="py-2">
+                  We always act proactively, taking into account the interests
+                  of the Client and the Company.
+                </li>
+                <li className="py-2">
+                  People and teamwork are much more important than processes and
+                  tools.
+                </li>
+              </ol>
+            </div>
+          </section>
+          <section className="border-[1px] border-[#121] mb-3 h-[412px] md:h-[460px] lg:h-[420px]">
+            <div className="flex items-center justify-start m-4">
+              <Image src="/corevalues3.png" width="64" height="64" />
+            </div>
+            <div className="m-8">
+              <h4 className="text-[30px] lg:text-[23.4px] leading-[46px] md:leading-[40px] lg:leading-[32px] mb-4">
+                Result
+              </h4>
+              <ol className="list-disc text-[16px] leading-[28px] md:leading-[20px] lg:leading-[21px] tracking-normal px-6">
+                <li className="py-2">
+                  “Working” products are outcome measures whereas optimal
+                  solutions are the priority!
+                </li>
+                <li className="py-2">
+                  Everyone has the responsibility for the team’s results.
+                </li>
+              </ol>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div
+        style={{ fontFamily: "Satoshi" }}
+        className="flex flex-col sm:flex-row md:flex-row m-3 md:m-8 lg:justify-center"
+      >
+        <section className="text-[#000000] m-9 sm:m-3 sm:border-r-[0.1px] border-[#999999] lg:mr-[59px] lg:pr-[70px]">
+          <span className="flex items-center mb-8">
+            <div className="m-3">
+              <h2 className="text-[44px] leading-[52px] sm:text-[45px] sm:leading-[54px] lg:text-[60px] lg:leading-[72px] tracking-normal font-bold">
+                India
+              </h2>
+              <p className="text-[20px] leading-[24px] tracking-normal font-semibold">
+                09:04 PM
+              </p>
+            </div>
+            <Image
+              src="/india_design_studio_leo9_studio.svg"
+              width="172"
+              height="122"
+              className="w-[150px] h-[100px] md:w-[172px] md:h-[122px]"
+            />
+          </span>
+          <p className="text-[16px] lg:text-[18px] leading-[24px]  tracking-normal my-3">
+            Office No.202, 2nd Floor, Techno Park, Eksar, Link Road,Borivali
+            &#40;W&#41;, Mumbai: 400 092.
+          </p>
+          <p className="text-[16px] lg:text-[18px] leading-[24px] tracking-normal">
+            44, 2nd floor, 2nd Main Road,3rd Cross Guru Raghavendra Nagar, JP
+            Nagar 7th Phase Bangalore, Karnataka 560078
+          </p>
+        </section>
+        <section className="text-[#000000] m-9 sm:m-3">
+          <span className="flex items-center mb-8">
+            <div>
+              <h2 className="text-[44px] leading-[52px] sm:text-[45px] sm:leading-[54px] lg:text-[60px] lg:leading-[72px] tracking-normal font-bold">
+                USA
+              </h2>
+              <p className="text-[20px] leading-[24px] tracking-normal font-semibold">
+                09:04 PM
+              </p>
+            </div>
+            <Image
+              src="/usa_design_studio_leo9_studio.svg"
+              width="172"
+              height="122"
+              className="w-[150px] h-[100px] md:w-[172px] md:h-[122px]"
+            />
+          </span>
+          <p className="text-[16px] lg:text-[18px] leading-[24px] tracking-normal my-3">
+            16 Madison Ave, Lake Hiawatha, NJ 07034,
+            <br /> United States
+          </p>
+        </section>
       </div>
     </section>
   );
