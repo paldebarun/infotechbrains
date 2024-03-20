@@ -18,7 +18,7 @@ const Footer = () => {
         <div className="w-full md:w-[40%]  flex   flex-col md:justify-end  gap-12">
           <div className="text-white flex gap-5 items-center  ">
             <figure>
-              <Image width={20} height={20} alt="logo png" src={mainlogo} />
+              <Image width={20} height={20} alt="logo png" src={mainlogo} className=" h-auto" />
             </figure>
 
             <div className="text-xl">alter.io</div>
@@ -35,9 +35,9 @@ const Footer = () => {
           </a>
 
           <figure className="flex gap-9 items-center">
-            <Image width={100} height={100} alt="footer image" src={logo2} />
+            <Image width={100} height={100} alt="footer image" src={logo2} style={{ width: 'auto' }} />
 
-            <Image width={70} height={70} alt="footer image" src={logo3} />
+            <Image width={70} height={70} alt="footer image" src={logo3} style={{ width: 'auto' }} />
           </figure>
         </div>
 
@@ -50,6 +50,7 @@ const Footer = () => {
                 alt="footer image 2"
                 src={lisbanlight}
                 className=""
+                style={{ width: 'auto' }}
               />
             </figure>
 
@@ -91,6 +92,7 @@ const Footer = () => {
                 height={120}
                 alt="footer image 3"
                 src={londonlight}
+                style={{ width: 'auto' }}
               />
             </figure>
 
@@ -133,6 +135,7 @@ const Footer = () => {
                 alt="footer image 5"
                 src={milanlight}
                 className=""
+                style={{ width: 'auto' }}
               />
             </figure>
 
@@ -179,6 +182,9 @@ const Footer = () => {
               height={70}
               src={mainlogo}
               className=" w-10 h-10"
+              style={{ width: 'auto'
+              
+               }}
             />
           </figure>
         </a>
