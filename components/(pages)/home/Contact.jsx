@@ -1,10 +1,13 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import Hero1 from "@/public/images/contact/newsletter-fillerimg.jpg";
 import { BsX } from "react-icons/bs";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaArrowLeft, FaChevronRight } from "react-icons/fa";
 import { MdInfo } from "react-icons/md";
+
+import Hero1 from "@/public/images/contact/newsletter-fillerimg.jpg";
+import S1 from "@/public/images/contact/s1.png";
+import S2 from "@/public/images/contact/s2.svg";
 
 const options = [
     {
@@ -38,7 +41,7 @@ const Contact = () => {
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
-    const [services, setServices] = useState([]);
+    const [services, setServices] = useState("");
     const [isOpen, setIsOpen] = useState(false);
 
     const nextStep = () => {
@@ -62,8 +65,7 @@ const Contact = () => {
     };
 
     const handleServiceChange = (e) => {
-        const service = e.target.value;
-        setServices(service);
+        setServices(e.target.value);
     };
 
     const toggleModal = () => {
@@ -124,17 +126,23 @@ const Form = ({
             case 2:
                 return (
                     <>
-                        <div className="flex flex-col">
+                        <div className="isolate p-5 relative z-10 overflow-hidden flex flex-col">
                             <p className="my-2">
-                                Hello, <span className="text-blue-500">{email}</span>
+                                Hello,{" "}
+                                <span className="text-blue-500 font-semibold text-sm">
+                                    {email}
+                                </span>
                             </p>
-                            <h3 className="my-2 text-3xl font-semibold">
-                                Enter your name and phone number
-                            </h3>
-                            <p className="text-base text-gray-500">
+                            <h3 className="my-2 text-3xl font-semibold">Add your details.</h3>
+                            <p className="mt-2 text-base text-gray-500">
                                 Praesent egestas, nisl eu pretium mattis, tortor dolor rutrum
                                 dui, a fringilla nulla erat sed justo.
                             </p>
+                            <Image
+                                src={S1}
+                                alt="bg"
+                                className="absolute bottom-0 left-0 w-40 overflow-hidden rounded-bl-2xl -z-10 rotate-90"
+                            />
 
                             <form
                                 onSubmit={handleSubmit2}
@@ -168,19 +176,20 @@ const Form = ({
                                     className="min-w-0 flex-auto rounded-xl border-0 bg-gray-50/50 px-3.5 py-2 text-black shadow-sm ring-1 ring-inset ring-black/20 focus:ring-inset sm:text-sm sm:leading-6"
                                     placeholder="Enter your mobile number"
                                 />
-                                <div className="mt-10 flex gap-x-4 ml-auto items-end">
+                                <div className="mt-10 flex items-center gap-x-4 ml-auto">
                                     <button
                                         type="button"
                                         onClick={toggleModal}
-                                        className="mx-auto border rounded-full p-1 hover:bg-gray-200"
+                                        className="mx-auto inline-flex items-center gap-3 p-1 text-gray-400 hover:text-blue-600 font-semibold"
                                     >
-                                        <FaChevronLeft className="w-4 h-4 text-gray-800 hover:text-black" />
+                                        <FaArrowLeft className="w-3 h-3" />
+                                        Back
                                     </button>
                                     <button
                                         type="submit"
-                                        className="mx-auto border rounded-full p-1 hover:bg-gray-200"
+                                        className="mx-auto border rounded-2xl px-3 py-2 bg-blue-600 text-white hover:bg-blue-700"
                                     >
-                                        <FaChevronRight className="w-4 h-4 text-gray-800 hover:text-black" />
+                                        Next Step
                                     </button>
                                 </div>
                             </form>
@@ -190,7 +199,7 @@ const Form = ({
             case 3:
                 return (
                     <>
-                        <div className="flex flex-col">
+                        <div className="isolate p-5 relative z-10 overflow-hidden flex flex-col">
                             <h3 className="my-2 text-3xl font-semibold">
                                 Pick your type of project.
                             </h3>
@@ -198,6 +207,12 @@ const Form = ({
                                 Praesent egestas, nisl eu pretium mattis, tortor dolor rutrum
                                 dui, a fringilla nulla erat sed justo.
                             </p>
+
+                            <Image
+                                src={S2}
+                                alt="bg"
+                                className="absolute bottom-0 left-0 w-28 rotate-180 overflow-hidden rounded-bl-2xl -z-10 "
+                            />
 
                             <form
                                 onSubmit={handleSubmit2}
@@ -217,7 +232,7 @@ const Form = ({
                                         onChange={servicesChange}
                                         value={services}
                                     >
-                                        <option value="">Pick your type of project here</option>
+                                        <option>Pick your type of project here</option>
 
                                         {options.map((service) => (
                                             <option key={service.id} value={service.title}>
@@ -227,19 +242,20 @@ const Form = ({
                                     </select>
                                 </div>
 
-                                <div className="mt-10 flex gap-x-4 ml-auto items-end">
+                                <div className="mt-10 flex items-center gap-x-4 ml-auto">
                                     <button
                                         type="button"
                                         onClick={onPrev}
-                                        className="mx-auto border rounded-full p-1 hover:bg-gray-200"
+                                        className="mx-auto inline-flex items-center gap-3 p-1 text-gray-400 hover:text-blue-600 font-semibold"
                                     >
-                                        <FaChevronLeft className="w-4 h-4 text-gray-800 hover:text-black" />
+                                        <FaArrowLeft className="w-3 h-3" />
+                                        Back
                                     </button>
                                     <button
                                         type="submit"
-                                        className="mx-auto border rounded-full p-1 hover:bg-gray-200"
+                                        className="mx-auto border rounded-2xl px-3 py-2 bg-blue-600 text-white hover:bg-blue-700"
                                     >
-                                        <FaChevronRight className="w-4 h-4 text-gray-800 hover:text-black" />
+                                        Submit
                                     </button>
                                 </div>
                             </form>
@@ -249,7 +265,7 @@ const Form = ({
             case 4:
                 return (
                     <>
-                        <div className="flex flex-col">
+                        <div className="isolate p-5 relative z-10 overflow-hidden flex flex-col">
                             <h3 className="my-2 text-3xl font-semibold">Confirmation</h3>
 
                             <div className="flex flex-col">
@@ -265,7 +281,7 @@ const Form = ({
                                     onClick={onPrev}
                                     className="mx-auto border rounded-full p-1 hover:bg-gray-200"
                                 >
-                                    <FaChevronLeft className="w-4 h-4 text-gray-800 hover:text-black" />
+                                    <FaArrowLeft className="w-4 h-4 text-gray-800 hover:text-black" />
                                 </button>
                                 <button
                                     type="button"
@@ -351,7 +367,7 @@ const Form = ({
                                                     htmlFor="subscribe-checkbox"
                                                     className="ml-3 text-sm text-gray-300"
                                                 >
-                                                    Subscribe to newsletter
+                                                    I accept all your terms and condition
                                                 </label>
                                             </div>
                                         </div>
@@ -374,12 +390,12 @@ const Form = ({
             {isOpen && (
                 <>
                     <div className="overflow-y-auto flex mx-auto my-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full inset-0 bg-black bg-opacity-50 animate-fadeIn px-6 sm:px-0">
-                        <div className="relative p-5 w-full max-w-xl isolate bg-white bg-clip-padding backdrop-filter bg-opacity-[0.985] backdrop-blur-sm rounded-2xl shadow-xl">
+                        <div className="relative w-full max-w-xl isolate bg-white bg-clip-padding backdrop-filter bg-opacity-[0.985] backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden">
                             <div className="z-50">
                                 <div className="">
                                     <button
                                         onClick={toggleModal}
-                                        className="text-white mb-3 flex ml-auto"
+                                        className="text-white pt-5 pr-5 flex ml-auto"
                                     >
                                         <BsX className="w-8 h-8 text-black" />
                                     </button>
