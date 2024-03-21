@@ -67,6 +67,7 @@ const ContactUsCompo = () => {
             <Image
               className="w-[65px] mx-auto mb-4"
               src="/clock-svgrepo-com.svg"
+              alt="clock_svg"
               width="10"
               height="10"
             />
@@ -84,6 +85,7 @@ const ContactUsCompo = () => {
             <Image
               className="w-[65px] mx-auto mb-4"
               src="/map-pointer-svgrepo-com.svg"
+              alt="map_pointer_svg"
               width="10"
               height="10"
             />
@@ -105,6 +107,7 @@ const ContactUsCompo = () => {
             <Image
               className="w-[75px] mx-auto mb-4"
               src="/customer-care-svgrepo-com.svg"
+              alt="customer_care_svg"
               width="10"
               height="10"
             />
@@ -128,8 +131,8 @@ const ContactUsCompo = () => {
         <iframe
           className="w-full lg:h-[600px] h-[300px] md:h-[400px]"
           aria-hidden="false"
-          frameborder="0"
-          tabindex="-1"
+          frameBorder="0"
+          tabIndex="-1"
           src="https://www.google.com/maps/embed?origin=mfe&pb=!1m4!2m1!1s51.503325,-0.119545!5e0!6i12"
         ></iframe>{" "}
       </div>
@@ -295,7 +298,7 @@ const ContactUsCompo = () => {
         <div className="flex md:flex-row flex-col m-3">
           <section className="border-[1px] md:border-r-[0px] border-[#121] mb-3 h-[412px] md:h-[460px] lg:h-[420px]">
             <div className="flex items-center justify-start m-4">
-              <Image src="/corevalues1.png" width="64" height="64" />
+              <Image alt="FlexibilityPng" src="/corevalues1.png" width="64" height="64" />
             </div>
             <div className="m-8">
               <h4 className="text-[30px] lg:text-[23.4px] leading-[46px] md:leading-[40px] lg:leading-[32px] mb-4">
@@ -315,7 +318,7 @@ const ContactUsCompo = () => {
           </section>
           <section className="border-[1px] md:border-r-[0px] border-[#121] mb-3 h-[412px] md:h-[460px] lg:h-[420px]">
             <div className="flex items-center justify-start m-4">
-              <Image src="/corevalues2.png" width="64" height="64" />
+              <Image alt="CooperationPng" src="/corevalues2.png" width="64" height="64" />
             </div>
             <div className="m-8">
               <h4 className="text-[30px] lg:text-[23.4px] leading-[46px] md:leading-[40px] lg:leading-[32px] mb-4">
@@ -335,7 +338,7 @@ const ContactUsCompo = () => {
           </section>
           <section className="border-[1px] border-[#121] mb-3 h-[412px] md:h-[460px] lg:h-[420px]">
             <div className="flex items-center justify-start m-4">
-              <Image src="/corevalues3.png" width="64" height="64" />
+              <Image alt="ResultPng" src="/corevalues3.png" width="64" height="64" />
             </div>
             <div className="m-8">
               <h4 className="text-[30px] lg:text-[23.4px] leading-[46px] md:leading-[40px] lg:leading-[32px] mb-4">
@@ -370,6 +373,7 @@ const ContactUsCompo = () => {
             </div>
             <Image
               src="/india_design_studio_leo9_studio.svg"
+              alt="india_design_studio"
               width="172"
               height="122"
               className="w-[150px] h-[100px] md:w-[172px] md:h-[122px]"
@@ -396,6 +400,7 @@ const ContactUsCompo = () => {
             </div>
             <Image
               src="/usa_design_studio_leo9_studio.svg"
+              alt="usa_design_studio"
               width="172"
               height="122"
               className="w-[150px] h-[100px] md:w-[172px] md:h-[122px]"
