@@ -127,6 +127,7 @@ const ContactUsCompo = () => {
           </div>
         </section>
       </div>
+
       <div className="mt-6 mb-4">
         <iframe
           className="w-full lg:h-[600px] h-[300px] md:h-[400px]"
@@ -136,6 +137,7 @@ const ContactUsCompo = () => {
           src="https://www.google.com/maps/embed?origin=mfe&pb=!1m4!2m1!1s51.503325,-0.119545!5e0!6i12"
         ></iframe>{" "}
       </div>
+
       <div className="lg:m-[90px] m-4 mb-4 flex md:flex-row flex-col">
         <div className="lg:m-3 md:mr-8 md:w-full">
           <section className="mt-12 mb-4">
@@ -288,6 +290,7 @@ const ContactUsCompo = () => {
           </form>
         </div>
       </div>
+
       <div
         className="text-[#1f1f1f] m-8"
         style={{ fontFamily: "Inter, sans-serif" }}
@@ -357,6 +360,7 @@ const ContactUsCompo = () => {
           </section>
         </div>
       </div>
+      
       <div
         style={{ fontFamily: "Satoshi" }}
         className="flex flex-col sm:flex-row md:flex-row m-3 md:m-8 lg:justify-center"

@@ -87,9 +87,8 @@ const Card = ({ setIsDropdownOpen, subCardArr }) => {
       onMouseLeave={handleMouseLeave}
     >
       <div
-        className={`relative p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:scale-105 ${
-          isHovered ? "scale-105" : ""
-        }`}
+        className={`relative p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:scale-105 ${isHovered ? "scale-105" : ""
+          }`}
         style={{ backgroundColor: subCardArr.initialbgCol }}
       >
         <h2 className="text-gray-800 text-[27px] font-bold mb-2">
@@ -131,9 +130,8 @@ const CardMob = ({ subCardArr }) => {
   return (
     <div className="group relative m-3 sm:m-3 hover:cursor-pointer">
       <div
-        className={`relative p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:scale-105 ${
-          isClicked ? "scale-105" : ""
-        }`}
+        className={`relative p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:scale-105 ${isClicked ? "scale-105" : ""
+          }`}
         style={{ backgroundColor: subCardArr.initialbgCol }}
         onClick={handleClick}
       >
@@ -168,16 +166,12 @@ const CardMob = ({ subCardArr }) => {
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDesktopServicesDropdownOpen, setIsDesktopServicesDropdownOpen] =
-    useState(false);
-  const [isDesktopAboutDropdownOpen, setIsDesktopAboutDropdownOpen] =
-    useState(false);
+  const [isDesktopServicesDropdownOpen, setIsDesktopServicesDropdownOpen] = useState(false);
+  const [isDesktopAboutDropdownOpen, setIsDesktopAboutDropdownOpen] = useState(false);
   // const containerRef1 = useRef(null);
   // const containerRef2 = useRef(null);
-  const [isMobileServicesDropdownOpen, setIsMobileServicesDropdownOpen] =
-    useState(false);
-  const [isMobileAboutDropdownOpen, setIsMobileAboutDropdownOpen] =
-    useState(false);
+  const [isMobileServicesDropdownOpen, setIsMobileServicesDropdownOpen] = useState(false);
+  const [isMobileAboutDropdownOpen, setIsMobileAboutDropdownOpen] = useState(false);
 
   const sectionRef = useRef(null);
 
@@ -224,11 +218,12 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    document.addEventListener("click", clickOutside);
+
+    document.addEventListener('click', clickOutside);
 
     return () => {
-      document.removeEventListener("click", clickOutside);
-    };
+      document.removeEventListener('click', clickOutside)
+    }
   });
 
   // useEffect(() => {
@@ -281,9 +276,8 @@ const Navbar = () => {
             </svg>
           </button>
           <div
-            className={`fixed top-0 left-0 w-screen shadow-xl h-screen bg-white z-50 overflow-y-auto ${
-              isOpen ? "block md:w-[50%] md:ml-[50%]" : "hidden"
-            }`}
+            className={`fixed top-0 left-0 w-screen shadow-xl h-screen bg-white z-50 overflow-y-auto ${isOpen ? "block md:w-[50%] md:ml-[50%]" : "hidden"
+              }`}
           >
             <button
               onClick={() => setIsOpen(false)} // Use a function to set isOpen to false
@@ -322,7 +316,7 @@ const Navbar = () => {
               <ul className="space-y-4 m-[10px]">
                 <li>
                   <a
-                    href="#"
+                    href="/"
                     className="text-[#000000] text-xl font-bold md:hidden"
                   >
                     InfoTechBrains
@@ -339,18 +333,16 @@ const Navbar = () => {
                 <li className="relative">
                   <button
                     onClick={handleMobileServicesDropdownToggle}
-                    className={`text-[22px] font-bold hover:text-[#ef2168] block ${
-                      isMobileServicesDropdownOpen
-                        ? "text-[#ef2168] "
-                        : "text-[#000000]"
-                    }`}
+                    className={`text-[22px] font-bold hover:text-[#ef2168] block ${isMobileServicesDropdownOpen
+                      ? "text-[#ef2168] "
+                      : "text-[#000000]"
+                      }`}
                   >
                     <span className="flex items-center">
                       Services
                       <svg
-                        className={`icon ml-1 transition transform ${
-                          isMobileServicesDropdownOpen ? "rotate-180" : ""
-                        }`}
+                        className={`icon ml-1 transition transform ${isMobileServicesDropdownOpen ? "rotate-180" : ""
+                          }`}
                         width="14"
                         height="16"
                         viewBox="0 0 320 512"
@@ -367,26 +359,26 @@ const Navbar = () => {
                       className={`top-full left-0 w-full bg-white py-2 px-4 `}
                     >
                       {ServicesSubCards.map((subCard, index) => (
-                        <CardMob key={index} subCardArr={subCard} />
+                        <CardMob
+                          key={index}
+                          subCardArr={subCard}
+                        />
                       ))}
                     </div>
                   )}
+
                 </li>
                 <li className="relative">
                   <button
                     onClick={handleMobileAboutDropdownToggle}
-                    className={`text-[22px] font-bold hover:text-[#ef2168] block ${
-                      isMobileAboutDropdownOpen
-                        ? "text-[#ef2168]"
-                        : "text-[#000000]"
-                    }`}
+                    className={`text-[22px] font-bold hover:text-[#ef2168] block ${isMobileAboutDropdownOpen ? "text-[#ef2168]" : "text-[#000000]"
+                      }`}
                   >
                     <span className="flex items-center">
                       About
                       <svg
-                        className={`icon ml-1 transition transform ${
-                          isMobileAboutDropdownOpen ? "rotate-180" : ""
-                        }`}
+                        className={`icon ml-1 transition transform ${isMobileAboutDropdownOpen ? "rotate-180" : ""
+                          }`}
                         width="14"
                         height="16"
                         viewBox="0 0 320 512"
@@ -399,9 +391,8 @@ const Navbar = () => {
                   </button>
                   {/* About Dropdown */}
                   <div
-                    className={`top-full left-0 w-full bg-white py-2 px-4 ${
-                      isMobileAboutDropdownOpen ? "block" : "hidden"
-                    }`}
+                    className={`top-full left-0 w-full bg-white py-2 px-4 ${isMobileAboutDropdownOpen ? "block" : "hidden"
+                      }`}
                   >
                     {AboutSubCards.map((subCard, index) => (
                       <CardMob
@@ -429,12 +420,10 @@ const Navbar = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="/contact-us" onClick={handleNavLinkClick}>
-                    <div className="button ml-2">
-                      <span class="label-up">Contact</span>
-                      <span class="label-up">Contact</span>
-                    </div>
-                  </a>
+                  <div className="button">
+                    <span className="label-up">Contact</span>
+                    <span className="label-up">Contact</span>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -442,12 +431,9 @@ const Navbar = () => {
         </div>
       </nav>
       {/* desktop navbar */}
-      <nav className="bg-[#ffffff] py-4 border-b-[1px] border-[#000000] hidden lg:block z-50">
-        <div
-          ref={sectionRef}
-          className="container mx-auto flex items-right justify-between"
-        >
-          <a href="#" className="text-[#000000] items-center text-xl font-bold">
+      <nav className="bg-[#ffffff]  py-4 relative border-b-[1px] border-[#000000] hidden lg:block z-50">
+        <div ref={sectionRef} className="container mx-auto flex items-right justify-between">
+          <a href="/" className="text-[#000000] my-auto items-center text-2xl font-semibold">
             InfoTechBrains
           </a>
           <div className="flex items-center justify-center flex-1">
@@ -459,21 +445,17 @@ const Navbar = () => {
               Work
             </a>
             <div
-              className="relative group"
+              className=" group"
               onClick={handleServicesDropdownToggle}
             >
               <button
-                className={`mr-7 hover:text-[#ef2168] flex items-center ml-2 ${
-                  isDesktopServicesDropdownOpen
-                    ? "text-[#ef2168]"
-                    : "text-[#000000]"
-                }`}
+                className={`mr-7 hover:text-[#ef2168] flex items-center ml-2 ${isDesktopServicesDropdownOpen ? "text-[#ef2168]" : "text-[#000000]"
+                  }`}
               >
                 Services
                 <svg
-                  className={`icon ml-1 transition transform ${
-                    isDesktopServicesDropdownOpen ? "rotate-180" : ""
-                  }`}
+                  className={`icon ml-1 transition transform ${isDesktopServicesDropdownOpen ? "rotate-180" : ""
+                    }`}
                   width="14"
                   height="16"
                   viewBox="0 0 320 512"
@@ -484,22 +466,17 @@ const Navbar = () => {
                 </svg>
               </button>
               <div
-                className={`absolute-dropdown mr-5 bg-white border-b-[1px] border-[#000000] py-2 px-4 top-18 ${
-                  isDesktopServicesDropdownOpen
-                    ? "opacity-100 visible z-0"
-                    : "opacity-0 invisible"
-                } transition duration-300`}
+                className={`absolute-dropdown bg-white border-b-[1px] border-[#000000] px-4 top-18 ${isDesktopServicesDropdownOpen
+                  ? "opacity-100 visible z-0"
+                  : "opacity-0 invisible"
+                  } transition duration-300`}
                 style={{
                   display: "grid",
                   gridTemplateColumns: "repeat(auto-fill, minmax(400px, 2fr))",
                   gap: "1rem",
                   justifyContent: "center",
                   alignItems: "center",
-                  maxWidth: "100vw",
-                  minWidth: "100vw",
-                  top: "189%",
-                  left: "283%",
-                  transform: "translateX(-60%)",
+                  top: "10",
                 }}
               >
                 {/* <div className="flex flex-row justify-center"> */}
@@ -513,19 +490,15 @@ const Navbar = () => {
                 {/* </div> */}
               </div>
             </div>
-            <div className="relative group" onClick={handleAboutDropdownToggle}>
+            <div className="group" onClick={handleAboutDropdownToggle}>
               <button
-                className={`mr-7 hover:text-[#ef2168] flex items-center ml-2 ${
-                  isDesktopAboutDropdownOpen
-                    ? "text-[#ef2168]"
-                    : "text-[#000000]"
-                }`}
+                className={`mr-7 hover:text-[#ef2168] flex items-center ml-2 ${isDesktopAboutDropdownOpen ? "text-[#ef2168]" : "text-[#000000]"
+                  }`}
               >
                 About
                 <svg
-                  className={`icon ml-1 transition transform ${
-                    isDesktopAboutDropdownOpen ? "rotate-180" : ""
-                  }`}
+                  className={`icon ml-1 transition transform ${isDesktopAboutDropdownOpen ? "rotate-180" : ""
+                    }`}
                   width="14"
                   height="16"
                   viewBox="0 0 320 512"
@@ -536,25 +509,19 @@ const Navbar = () => {
                 </svg>
               </button>
               <div
-                className={`absolute-dropdown mr-5 bg-white border-b-[1px] border-[#000000] py-2 px-4 top-12 ${
-                  isDesktopAboutDropdownOpen
-                    ? "opacity-100 visible"
-                    : "opacity-0 invisible"
-                } transition duration-300`}
+                className={`absolute-dropdown bg-white border-b-[1px] border-[#000000] py-2 top-12 ${isDesktopAboutDropdownOpen
+                  ? "opacity-100 visible"
+                  : "opacity-0 invisible"
+                  } transition duration-300`}
                 style={{
                   display: "grid",
                   gridTemplateColumns: "repeat(auto-fill, minmax(400px, 2fr))",
                   gap: "1rem",
                   justifyContent: "center",
                   alignItems: "center",
-                  maxWidth: "100vw",
-                  minWidth: "100vw",
-                  top: "189%",
-                  left: "220%",
-                  transform: "translateX(-60%)",
+                  top: "10",
                 }}
               >
-                {/* <div className="flex flex-row justify-center"> */}
                 {AboutSubCards?.map((subCard, index) => (
                   <Card
                     key={index}
@@ -562,7 +529,6 @@ const Navbar = () => {
                     subCardArr={subCard}
                   />
                 ))}
-                {/* </div> */}
               </div>
             </div>
             <a
@@ -579,11 +545,12 @@ const Navbar = () => {
             >
               Knowledge
             </a>
-            <a href="/contact-us" onClick={handleNavLinkClick}>
-              <div className="button ml-10">
-                <span class="label-up">Contact</span>
-                <span class="label-up">Contact</span>
-              </div>
+
+          </div>
+          <div className="button ml-10">
+            <a href="/contact-us">
+              <span className="label-up">Contact</span>
+              <span className="label-up">Contact</span>
             </a>
           </div>
         </div>

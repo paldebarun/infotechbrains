@@ -1,13 +1,23 @@
-import {Navbar} from '@/components/Navbar';
+import { Navbar } from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import Hero from '@/components/(pages)/home/Hero'
-import ContactUsCompo from "@/components/(pages)/contact/ContactUsCompo";
+import Hero from '@/components/(pages)/contact/Hero';
+import Map from '@/components/(pages)/contact/Map';
+import Form from '@/components/(pages)/contact/Form';
+import Values from '@/components/(pages)/contact/Values';
+import Locations from '@/components/(pages)/contact/Locations';
 
 export default function Contact() {
   return (
     <>
-        <Navbar/>
-        <ContactUsCompo/>
+      <Navbar />
+      <main >
+        <Hero />
+        <Map />
+        <Form />
+        <Values />
+        <Locations />
+      </main>
+      <Footer />
     </>
   );
 }
