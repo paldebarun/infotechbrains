@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, {useState, useEffect} from "react";
 import Image from "next/image";
 import "./OnHoverLink.css";
 import {
@@ -15,6 +17,36 @@ import { GrMailOption } from "react-icons/gr";
 import Link from "next/link";
 
 const ContactUsCompo = () => {
+  const [indianTime, setIndianTime] = useState('');
+  const [usTime, setUsTime] = useState('');
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const now = new Date();
+
+      // Setting Indian time
+      const indianTime = now.toLocaleTimeString('en-US', {
+        timeZone: 'Asia/Kolkata',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true,
+      });
+
+      // Setting US time
+      const usTime = now.toLocaleTimeString('en-US', {
+        timeZone: 'America/New_York',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true,
+      });
+
+      setIndianTime(indianTime);
+      setUsTime(usTime);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section>
       <div
@@ -162,6 +194,7 @@ const ContactUsCompo = () => {
                     id="name"
                     name="name"
                     placeholder="Name"
+                    required
                   />
                 </div>
                 <div className="hover-underline-animation flex items-center mb-5 md:mb-7 border-b-2 py-2 px-3 w-full relative">
@@ -176,6 +209,7 @@ const ContactUsCompo = () => {
                     id="email"
                     name="email"
                     placeholder="Email Address"
+                    required
                   />
                 </div>
               </div>
@@ -192,6 +226,7 @@ const ContactUsCompo = () => {
                     id="phone"
                     name="phone"
                     placeholder="Phone"
+                    required
                   />
                 </div>
                 <div className="hover-underline-animation flex items-center mb-5 md:mb-7 border-b-2 py-2 px-3 w-full relative">
@@ -206,6 +241,7 @@ const ContactUsCompo = () => {
                     id="subject"
                     name="subject"
                     placeholder="Subject"
+                    required
                   />
                 </div>
               </div>
@@ -222,6 +258,7 @@ const ContactUsCompo = () => {
                 name="message"
                 // rows="4"
                 placeholder="How can we help you? Feel free to get in touch!"
+                required
               />
             </div>
             <div className="mb-5 flex items-center">
@@ -230,6 +267,7 @@ const ContactUsCompo = () => {
                 type="checkbox"
                 id="terms"
                 name="terms"
+                required
               />
               <label className="text-[#696969] text-sm" htmlFor="terms">
                 I accept that my data is <a href="#privacy_policy">collected</a>
@@ -251,7 +289,7 @@ const ContactUsCompo = () => {
         className="text-[#1f1f1f] m-8"
         style={{ fontFamily: "Inter, sans-serif" }}
       >
-        <h3 className="text-[40px] lg:text-[42px] leading-[46px]">
+        <h3 className="text-[40px] px-2 py-2 lg:text-[42px] font-semibold leading-[46px]">
           Our core values
         </h3>
         <div className="flex md:flex-row flex-col m-3">
@@ -327,7 +365,7 @@ const ContactUsCompo = () => {
                 India
               </h2>
               <p className="text-[20px] leading-[24px] tracking-normal font-semibold">
-                09:04 PM
+                {indianTime}
               </p>
             </div>
             <Image
@@ -353,7 +391,7 @@ const ContactUsCompo = () => {
                 USA
               </h2>
               <p className="text-[20px] leading-[24px] tracking-normal font-semibold">
-                09:04 PM
+                {usTime}
               </p>
             </div>
             <Image
