@@ -63,11 +63,7 @@ const Hero = () => {
 
     </div>
 
-    {/* <div className='w-full flex justify-center  lg:w-9/12 h-auto'>
-    <Image src={heroimage2} alt="heroimage1" width={300} height={200} className="translate-y-12 z-10 w-[170px]  sm:w-[300px] h-[200px] sm:h-[350px] translate-x-14 sm:translate-x-24 rounded-lg " />
-   <Image src={heroimage1} alt="heroimage2" width={300} height={200} className="rounded-lg w-[170px] sm:w-[300px] h-[200px] sm:h-[350px]  -translate-x-12" />
    
-    </div> */}
     <div className='w-full flex justify-center lg:w-9/12 h-auto'>
   <Image 
     src={heroimage2} 
