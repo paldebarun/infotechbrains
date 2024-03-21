@@ -389,7 +389,7 @@ const Form = ({
 
             {isOpen && (
                 <>
-                    <div className="overflow-y-auto flex mx-auto my-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full inset-0 bg-black bg-opacity-50 animate-fadeIn px-6 sm:px-0">
+                    <div className="overflow-y-auto flex mx-auto my-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full inset-0 bg-black bg-opacity-70 animate-fadeIn px-6 sm:px-0">
                         <div className="relative w-full max-w-xl isolate bg-white bg-clip-padding backdrop-filter bg-opacity-[0.985] backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden">
                             <div className="z-50">
                                 <div className="">
