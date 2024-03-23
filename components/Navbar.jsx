@@ -477,7 +477,7 @@ const Navbar = () => {
                 className={`mr-7 hover:text-[#ef2168] flex items-center ml-2 ${isDesktopAboutDropdownOpen ? "text-[#ef2168]" : "text-[#000000]"
                   }`}
               >
-                About
+                Solutions
                 <svg
                   className={`icon ml-1 transition transform ${isDesktopAboutDropdownOpen ? "rotate-180" : ""
                     }`}
@@ -514,18 +514,16 @@ const Navbar = () => {
               </div>
             </div>
             <a
-              href="#"
-              className="text-[#000000] mr-7 hover:text-[#ef2168] ml-2"
-              onClick={handleNavLinkClick}
-            >
-              Clients
-            </a>
-            <a
               href="/hire-ai-experts"
               className="text-[#000000] mr-7 hover:text-[#ef2168] ml-2"
-              onClick={handleNavLinkClick}
             >
               Hire AI Experts
+            </a>
+            <a
+              href="/about"
+              className="text-[#000000] mr-7 hover:text-[#ef2168] ml-2"
+            >
+              About us
             </a>
 
           </div>

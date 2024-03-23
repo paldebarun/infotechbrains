@@ -6,7 +6,6 @@ import Navbar from '@/components/Navbar'
 import Hero from '@/components/(pages)/about/Hero';
 import Clients from '@/components/(pages)/about/Clients';
 import Services from '@/components/(pages)/about/Services';
-import Awards from '@/components/(pages)/about/Awards';
 
 export const metadata: Metadata = {
     title: "About us | Info Tech Brains",
@@ -21,7 +20,6 @@ const page = () => {
                 <Hero />
                 <Clients />
                 <Services />
-                <Awards />
             </main>
             <Footer />
         </>
