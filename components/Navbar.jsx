@@ -520,6 +520,12 @@ const Navbar = () => {
               Hire AI Experts
             </a>
             <a
+              href="/tech"
+              className="text-[#000000] mr-7 hover:text-[#ef2168] ml-2"
+            >
+              Tech
+            </a>
+            <a
               href="/about"
               className="text-[#000000] mr-7 hover:text-[#ef2168] ml-2"
             >

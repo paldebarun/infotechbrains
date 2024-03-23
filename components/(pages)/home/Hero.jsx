@@ -15,7 +15,7 @@ const Hero = () => {
                 Your browser does not support the video tag.
             </video>
 
-            <div className="absolute px-8 md:px-16 space-y-7 flex flex-col bottom-40 lg:bottom-32 max-w-4xl z-10">
+            <div className="absolute px-8 md:px-16 space-y-7 flex flex-col bottom-48 lg:bottom-32 max-w-4xl z-10">
                 <p className="disket leading-7 text-xl md:text-3xl text-gray-300">
                     WE ARE INFOTECHBRAINS
                 </p>
@@ -30,7 +30,7 @@ const Hero = () => {
             <Image
                 src={H1}
                 alt="robo-hand"
-                className="absolute mt-28 w-[30rem] md:w-[35rem] lg:w-[40rem] xl:w-[48rem] z-10 bottom-0 -right-20 lg:-right-36"
+                className="absolute mt-28 w-[30rem] md:w-[35rem] lg:w-[40rem] xl:w-[48rem] z-10 bottom-10 -right-20 lg:-right-36"
             />
         </section>
     );
