@@ -8,9 +8,6 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ['var(--font-geist-sans)']
-      },
       keyframes: {
         fadein: {
           from: { opacity: '0.015' },
