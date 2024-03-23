@@ -1,8 +1,43 @@
 "use client";
 import React from "react";
-import { IoArrowForwardSharp } from "react-icons/io5";
-import { awards } from "../../../data/awardtabledata";
 import { useTable } from "react-table";
+
+const awards = [
+  {
+    id: 1,
+    award: "Site Of The Day",
+    type: "Readability",
+    project: "technoWorld",
+    year: 2020
+
+  },
+  {
+    id: 2,
+    award: "Motion Graphics",
+    type: "Animation",
+    project: "Motion Lab",
+    year: 2021
+
+  },
+
+  {
+    id: 3,
+    award: "Bussiness Model",
+    type: "New Strategy",
+    project: "Market Life",
+    year: 2022
+
+  },
+  {
+    id: 4,
+    award: "Video Design",
+    type: "Vizualization",
+    project: "Live Cam Project",
+    year: 2023
+
+  },
+
+]
 
 const Awards = () => {
   const data = React.useMemo(() => awards, []);
@@ -64,7 +99,7 @@ const Awards = () => {
 
   return (
     <>
-    <div className="h-52 w-full"></div>
+      <div className="h-52 w-full"></div>
       {/* <section className="py-24 md:block hidden px-4 md:px-10">
         <div className="heading flex flex-col gap-4">
           <p className="font-semibold">ACHIEVEMENTS</p>

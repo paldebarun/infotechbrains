@@ -5,7 +5,6 @@ import Navbar from '@/components/Navbar'
 import Hero from '@/components/(pages)/about/Hero';
 import Clients from '@/components/(pages)/about/Clients';
 import Services from '@/components/(pages)/about/Services';
-import Awards from '@/components/(pages)/about/Awards';
 
 const page = () => {
     return (
@@ -15,7 +14,6 @@ const page = () => {
                 <Hero />
                 <Clients />
                 <Services />
-                <Awards />
             </main>
             <Footer />
         </>
