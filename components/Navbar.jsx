@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import "./ContactButton.css";
 
 const ServicesSubCards = [
   {
@@ -168,8 +167,6 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDesktopServicesDropdownOpen, setIsDesktopServicesDropdownOpen] = useState(false);
   const [isDesktopAboutDropdownOpen, setIsDesktopAboutDropdownOpen] = useState(false);
-  // const containerRef1 = useRef(null);
-  // const containerRef2 = useRef(null);
   const [isMobileServicesDropdownOpen, setIsMobileServicesDropdownOpen] = useState(false);
   const [isMobileAboutDropdownOpen, setIsMobileAboutDropdownOpen] = useState(false);
 
@@ -225,22 +222,6 @@ const Navbar = () => {
       document.removeEventListener('click', clickOutside)
     }
   });
-
-  // useEffect(() => {
-  //   const handleClickOutside = (event) => {
-  //     if (containerRef1.current || containerRef2.current && !containerRef1.current.contains(event.target || !containerRef2.current.contains(event.target))) {
-  //       setIsOpen(false);
-  //       setIsServicesDropdownOpen(false);
-  //       setIsAboutDropdownOpen(false);
-  //     }
-  //   };
-
-  //   document.addEventListener("mousedown", handleClickOutside);
-
-  //   return () => {
-  //     document.removeEventListener("mousedown", handleClickOutside);
-  //   };
-  // }, []);
 
   return (
     <>
@@ -430,6 +411,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+
       {/* desktop navbar */}
       <nav className="bg-[#ffffff]  py-4 relative border-b-[1px] border-[#000000] hidden lg:block z-50">
         <div ref={sectionRef} className="container mx-auto flex items-right justify-between">
@@ -539,11 +521,11 @@ const Navbar = () => {
               Clients
             </a>
             <a
-              href="#"
+              href="/hire-ai-experts"
               className="text-[#000000] mr-7 hover:text-[#ef2168] ml-2"
               onClick={handleNavLinkClick}
             >
-              Knowledge
+              Hire AI Experts
             </a>
 
           </div>
@@ -559,4 +541,4 @@ const Navbar = () => {
   );
 };
 
-export { Navbar };
+export default Navbar;

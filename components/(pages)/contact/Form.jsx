@@ -10,7 +10,6 @@ import {
 import { MdPhoneAndroid } from "react-icons/md";
 import { BsSend } from "react-icons/bs";
 import { GrMailOption } from "react-icons/gr";
-import "./OnHoverLink.css";
 
 const Form = () => {
     return (
@@ -59,7 +58,8 @@ const Form = () => {
                     </div>
                 </section>
             </div>
-            <div>
+
+            <div className='w-full my-auto'>
                 <form className="mt-8 md:w-full">
                     <div className="sm:flex sm:flex-row">
                         <div className="sm:mr-2 md:mr-3 lg:mr-5">
