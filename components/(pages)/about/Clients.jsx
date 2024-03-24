@@ -1,5 +1,5 @@
 import React from 'react';
-import {clientdata} from '../../../data/clientdata';
+import {clientdata} from './clientdata';
 import Image from 'next/image';
 
 const Clients = () => {
