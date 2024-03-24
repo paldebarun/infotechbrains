@@ -5,6 +5,8 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Hero from '@/components/(pages)/tech/Hero';
 import Tool from '@/components/(pages)/tech/Tools';
+import Toolsweuse from '@/components/(pages)/tech/ToolsWeUse';
+import Works from '@/components/(pages)/tech/Works';
 
 export const metadata: Metadata = {
     title: "Tech & Tools | Info Tech Brains",
@@ -18,6 +20,8 @@ const page = () => {
             <main>
                 <Hero />
                 <Tool />
+                <Toolsweuse />
+                <Works />
             </main>
             <Footer />
         </>
