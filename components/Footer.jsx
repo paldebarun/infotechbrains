@@ -13,7 +13,7 @@ import mainlogo from "../public/images/logoalter.svg";
 
 const Footer = () => {
   return (
-    <div className="bg-gray-900 overflow-x-hidden">
+    <div className="bg-gray-900 relative isolate overflow-x-hidden">
       <div className="w-screen bg-gray-800 flex justify-center flex-col md:flex-row gap-16 md:gap-7 px-10 sm:px-10  py-52 ">
         <div className="w-full md:w-[40%]  flex   flex-col md:justify-end  gap-12">
           <div className="text-white flex gap-5 items-center  ">

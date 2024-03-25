@@ -8,9 +8,6 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ['var(--font-geist-sans)']
-      },
       keyframes: {
         fadein: {
           from: { opacity: '0.015' },
@@ -27,7 +24,7 @@ const config: Config = {
         }
       },
       animation: {
-        fadeIn: 'fadein 0.4s ease-in-out',
+        fadeIn: 'fadein 0.55s ease-in-out',
         carousel: 'marquee 50s linear infinite',
         blink: 'blink 1.4s both infinite'
       }

@@ -6,7 +6,6 @@ import S2 from "@/public/images/home/s2.png";
 import S3 from "@/public/images/home/s3.png";
 import S4 from "@/public/images/home/s4.png";
 import S5 from "@/public/images/home/s5.png";
-import Link from "next/link";
 
 const services = [
     {

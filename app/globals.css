@@ -4,11 +4,11 @@
 
 @font-face {
   font-family: "disket";
-  src: url('/fonts/disket.woff2') format("woff2");
+  src: url("/fonts/disket.woff2") format("woff2");
 }
 @font-face {
-  font-family: 'recoleta';
-  src: url('/fonts/recoleta.woff2') format('woff2');
+  font-family: "recoleta";
+  src: url("/fonts/recoleta.woff2") format("woff2");
 }
 @layer base {
   ::-webkit-scrollbar {
@@ -34,173 +34,237 @@
   .recoleta {
     font-family: recoleta;
   }
-
 }
 
-body{
+@layer components {
+  body {
     overflow-x: hidden;
-}
-
-@keyframes progress1 {
-
-  from {
-    width:0px;
+  }
+  .button {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 4px;
+    transition: 0.3s;
+    cursor: pointer;
+    font-weight: bold;
   }
 
-  to {
-   
-    width:80%
-
-  }
-}
-
-@keyframes progress2 {
-
-  from {
-    width:0px;
+  /* BUTTON UP */
+  .label-up {
+    display: block;
+    margin: 0px 30px;
+    height: 100%;
+    position: relative;
+    top: 0%;
+    transition: 0.3s;
   }
 
-  to {
-   
-    width:90%
+  .button:hover .label-up {
+    top: -100%;
+  }
 
+  /* BUTTON DOWN */
+  .label-down {
+    display: block;
+    margin: 0px 30px;
+    height: 100%;
+    position: relative;
+    top: -100%;
+    transition: 0.3s;
+  }
+
+  .button:hover .label-down {
+    top: 0%;
+  }
+
+  .absolute-dropdown {
+    position: absolute;
+    top: 100%; /* Position the dropdown below the navbar */
+    left: 0; /* Align the dropdown with the left edge of the navbar */
+    width: 100%; /* Ensure the dropdown spans the full width of the navbar */
+    z-index: 1000; /* Ensure the dropdown appears above other content */
+  }
+  .link a {
+    display: inline-block;
+    padding: 15px 20px;
+    position: relative;
+  }
+  .link a:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #696969;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+  .link a:hover:after {
+    width: 100%;
+    left: 0;
+  }
+
+  .hover-underline-animation {
+    display: inline-block;
+  }
+
+  .hover-underline-animation:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #696969;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+  .hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  input[type="checkbox"] {
+    accent-color: #70af69; /* Change to your desired color */
+  }
+
+  @keyframes progress1 {
+    from {
+      width: 0px;
+    }
+
+    to {
+      width: 80%;
+    }
+  }
+
+  @keyframes progress2 {
+    from {
+      width: 0px;
+    }
+
+    to {
+      width: 90%;
+    }
+  }
+
+  .progressbar_1 {
+    animation-name: progress1;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: initial;
+    animation-fill-mode: forwards;
+  }
+
+  .progressbar_2 {
+    animation-name: progress2;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: initial;
+    animation-fill-mode: forwards;
+  }
+
+  .readmore {
+    opacity: 0;
+
+    transform: translateX(-50%);
+    transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;
+  }
+
+  .servicecard:hover .readmore {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .servicecard_arrow {
+    transform: translateX(-190%);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  }
+
+  .servicecard:hover .servicecard_arrow {
+    transform: translateX(0);
+  }
+
+  .viewgroup .arrow1 {
+    opacity: 0;
+
+    transition: transform 0.5s ease-in-out, opacity 0.2s ease-in-out;
+    transform: translateX(-50%);
+  }
+  .viewgroup .arrow2 {
+    opacity: 1;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in-out, opacity 0.2s ease-in-out; /* Smooth transition for transform */
+  }
+
+  .viewgroup:hover .arrow1 {
+    opacity: 1;
+    transform: translateX(40%); /* Move arrow1 to its original position */
+  }
+
+  .viewgroup:hover .arrow2 {
+    transform: translateX(43%); /* Move arrow2 to the right */
+    opacity: 0; /* Make arrow2 invisible */
+  }
+
+  @keyframes progressheading1 {
+    from {
+      width: 0;
+    }
+    to {
+      width: 75%;
+    }
+  }
+
+  @keyframes progressheading2 {
+    from {
+      width: 0;
+    }
+    to {
+      width: 83%;
+    }
+  }
+
+  .progressbarheading1 {
+    animation-name: progressheading1;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: initial;
+    animation-fill-mode: forwards;
+  }
+
+  .progressbarheading2 {
+    animation-name: progressheading2;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: initial;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes progresspercentanimation {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 100%;
+    }
+  }
+
+  .progresspercent {
+    animation-name: progresspercentanimation;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: initial;
+    animation-fill-mode: forwards;
   }
 }
-
-.progressbar_1{
- 
-  animation-name: progress1;
-  animation-duration: 2s;
-  animation-timing-function:ease-in-out;
-  animation-iteration-count: initial;
-  animation-fill-mode: forwards;
-
-
-}
-
-.progressbar_2{
-
-  animation-name: progress2;
-  animation-duration: 2s;
-  animation-timing-function:ease-in-out;
-  animation-iteration-count: initial;
-  animation-fill-mode: forwards;
-
-}
-
-.readmore {
-  opacity: 0;
-
-  transform: translateX(-50%);
-  transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;
-}
-
-.servicecard:hover .readmore {
-  
-  opacity: 1;
-  transform: translateX(0);
-}
-
-
-
-
-.servicecard_arrow{
-  
-  transform: translateX(-190%);
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-}
-
-.servicecard:hover .servicecard_arrow {
- 
-  transform: translateX(0);
-}
-
-
-
-.viewgroup .arrow1{
-  opacity:0;
-  
-  transition: transform 0.5s ease-in-out,opacity 0.2s ease-in-out;
-  transform: translateX(-50%);
-}
-.viewgroup .arrow2 {
-  opacity:1;
-  transform: translateX(-100%);
-  transition: transform 0.5s ease-in-out,opacity 0.2s ease-in-out; /* Smooth transition for transform */
- 
-}
-
-
-
-.viewgroup:hover .arrow1 {
-  opacity:1;
-  transform: translateX(40%); /* Move arrow1 to its original position */
-}
-
-.viewgroup:hover .arrow2 {
-  
-  transform: translateX(43%); /* Move arrow2 to the right */
-  opacity: 0; /* Make arrow2 invisible */
-}
-
-@keyframes progressheading1{
- from{
-    width:0;
- }
- to{
-  
-  width:75%
-
- }
-}
-
-@keyframes progressheading2{
-  from{
-     width:0;
-  }
-  to{
-   
-   width:83%
- 
-  }
- }
-
-.progressbarheading1{
-
-  animation-name: progressheading1;
-  animation-duration: 2s;
-  animation-timing-function:ease-in-out;
-  animation-iteration-count: initial;
-  animation-fill-mode: forwards;
-
-}
-
-.progressbarheading2{
-
-  animation-name: progressheading2;
-  animation-duration: 2s;
-  animation-timing-function:ease-in-out;
-  animation-iteration-count: initial;
-  animation-fill-mode: forwards;
-
-}
-
-@keyframes progresspercentanimation{
-  from{
-    opacity:0;
-  }
-  to{
-    opacity:100%;
-  }
-}
-
-.progresspercent{
-  animation-name: progresspercentanimation;
-  animation-duration: 3s;
-  animation-timing-function:ease-in-out;
-  animation-iteration-count: initial;
-  animation-fill-mode: forwards;
-
-}
-
-
