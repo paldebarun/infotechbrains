@@ -27,7 +27,7 @@ const config: Config = {
         }
       },
       animation: {
-        fadeIn: 'fadein 1s ease-in-out',
+        fadeIn: 'fadein 0.4s ease-in-out',
         carousel: 'marquee 50s linear infinite',
         blink: 'blink 1.4s both infinite'
       }
