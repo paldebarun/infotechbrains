@@ -45,8 +45,8 @@ const Footer = () => {
           <div className="flex flex-col  md:flex-row gap-10 items-start md:items-end">
             <figure>
               <Image
-                width={130}
-                height={130}
+                width={120}
+                height={120}
                 alt="footer image 2"
                 src={lisbanlight}
                 className=""

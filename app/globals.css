@@ -268,3 +268,16 @@
     animation-fill-mode: forwards;
   }
 }
+
+.swiper-button-next,
+.swiper-button-prev,
+.swiper-pagination{
+
+top:unset !important;
+left:unset !important;
+bottom:unset !important;
+width:auto  !important;
+right:unset !important;
+position: unset !important;
+
+}
