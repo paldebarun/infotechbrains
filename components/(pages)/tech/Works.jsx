@@ -14,27 +14,27 @@ const Works = () => {
   const swiperRef = useRef(null);
 
   const goToNextSlide = () => {
-    if(swiperRef.current){
+    if (swiperRef.current) {
       swiperRef.current.slideNext()
     }
   }
 
   const goToPreviousSlide = () => {
-    if(swiperRef.current){
+    if (swiperRef.current) {
       swiperRef.current.slidePrev();
     }
   }
 
   return (
-    <section className="w-full bg-gray-900 py-7 px-5 relative">
+    <section className="w-full bg-[#1c1e24] py-16 px-5 relative">
       <p className=" w-full text-3xl md:text-5xl text-white px-6">
         SOME OF <span className="text-orange-500">OUR WORKS</span>
       </p>
 
       <div className="absolute bg-gradient-to-r from-gray-900 w-16 top-0 z-50 h-full left-0"></div>
-      <Button goToNextSlide = {goToNextSlide} goToPreviousSlide = {goToPreviousSlide} />
-      <div className="py-20">
- 
+      <Button goToNextSlide={goToNextSlide} goToPreviousSlide={goToPreviousSlide} />
+      <div className="py-20 -translate-x-6">
+
         <Swiper
           spaceBetween={0}
           freeMode={true}
@@ -52,9 +52,12 @@ const Works = () => {
               spaceBetween: 0,
             },
           }}
-          onSwiper = {(swiper) => {swiperRef.current = swiper}}
+          onSwiper={(swiper) => { swiperRef.current = swiper }}
           modules={[FreeMode]}
           className="flex flex-col"
+          style={{
+            overflow: "visible",
+        }}
         >
 
 
@@ -62,11 +65,14 @@ const Works = () => {
             {workdata.map((work, index) => (
               <SwiperSlide
                 key={index}
-                className="group border group px-10  border-slate-400"
+                className="group border group p-8 md:p-12  border-slate-400"
               >
-                <a href={work.url} className="w-full h-auto ">
-                  <div className="text-white h-[600px] lg:h-[600px] px-3 sm:px-8 lg:px-10 py-16 flex flex-col gap-16">
-                    <p className="text-2xl md:text-3xl">{work.heading}</p>
+                <div className=" relative isolate w-full h-auto ">
+                  <div className="text-white h-[600px] lg:h-[470px] flex flex-col justify-between gap-16">
+                    <a href={work.url} className="text-2xl md:text-3xl">
+                      {work.heading}
+                      <span className=" absolute inset-0 h-full"></span>
+                    </a>
                     <ul className="flex flex-col gap-10 ">
                       {work.points.map((point, index) => (
                         <li
@@ -84,13 +90,13 @@ const Works = () => {
                       ))}
                     </ul>
                   </div>
-                  <div className="flex w-full justify-start  items-center py-10 sm:px-8 md:px-10">
+                  <div className="flex sm:px-8 md:px-10">
                     <p className="text-slate-300 text-sm sm:text-md md:text-lg ">
                       SEE FULL CASE STUDY
                     </p>
                     <GoArrowDownRight className="text-orange-400 w-6 h-6 group-hover:-rotate-90 group-hover:text-white transition-all duration-200" />
                   </div>
-                </a>
+                </div>
               </SwiperSlide>
             ))}
           </div>
@@ -112,7 +118,7 @@ const Works = () => {
 export default Works;
 
 
-const Button = ({goToNextSlide , goToPreviousSlide}) => {
+const Button = ({ goToNextSlide, goToPreviousSlide }) => {
   // const swiper = useSwiper();
 
   return (
