@@ -12,8 +12,8 @@ import { Pagination,Navigation } from "swiper/modules";
 
 const Works = () => {
   return (
-    <div className="bg-black py-7 px-5">
-      <p className="text-5xl text-white">
+    <section className="w-full bg-black py-7 px-5">
+      <p className=" w-full text-3xl md:text-5xl text-white">
         SOME OF <span className="text-orange-500">OUR WORKS</span>
       </p>
        <div className="swipercontainer relative py-20">
@@ -31,11 +31,11 @@ const Works = () => {
             spaceBetween: 0,
           },
           768: {
-            slidesPerView: 2,
+            slidesPerView: 3,
             spaceBetween: 0,
           },
-          1024: {
-            slidesPerView: 3,
+          1088: {
+            slidesPerView: 4,
             spaceBetween: 0,
           },
         }}
@@ -43,24 +43,26 @@ const Works = () => {
         className=""
       >
         {workdata.map((work, index) => (
-          <SwiperSlide key={index} className="group border">
-            <div className="text-white h-auto px-10 py-4 flex flex-col gap-10">
-            <p className="text-4xl">{work.heading}</p>
+          <SwiperSlide key={index} className="group border group  border-slate-400">
+          <a href={work.url} className="w-full h-auto ">
+            <div className="text-white h-[500px] px-10 sm:px-8 lg:px-10 py-16 flex flex-col gap-10">
+            <p className="text-xl md:text-2xl lg:text-xl">{work.heading}</p>
               <ul className="flex flex-col gap-10 ">
                 {work.points.map((point, index) => (
-                  <li key={index} className="text-slate-300">
-                    <div className="flex gap-3 items-center">
-                      <div className="w-2 h-2 bg-orange-400"></div>
-                      <span className="text-lg">{point}</span>
+                  <li key={index} className="text-slate-300 list-square">
+                    <div className="flex w-full h-auto gap-3 items-center">
+                     
+                      <span className="text-sm lg:text-md">{point}</span>
                     </div>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="flex gap-3 items-center py-4 px-10">
-              <p className="text-slate-300 text-sm lg:text-xl">SEE FULL CASE STUDY</p>
-              <GoArrowDownRight className="text-orange-400 w-10 h-10 group-hover:-rotate-90 group-hover:text-white transition-all duration-200" />
+            <div className="flex w-full justify-center  items-center py-10 md:px-10">
+              <p className="text-slate-300 text-sm ">SEE FULL CASE STUDY</p>
+              <GoArrowDownRight className="text-orange-400 w-6 h-6 group-hover:-rotate-90 group-hover:text-white transition-all duration-200" />
             </div>
+            </a>
           </SwiperSlide>
         ))}
       </Swiper>
@@ -75,7 +77,7 @@ const Works = () => {
       </div>
     </div>
 
-    </div>
+    </section>
   );
 };
 

@@ -8,7 +8,11 @@ export const workdata=[
    "Collection, processing, and visulization of financial data",
    "Opening and monitoring of investment account",
    "Automated customer billing and charging" 
- ]
+ ],
+
+ url:"#wealth-management-system"
+
+
 
 },
 {
@@ -20,6 +24,9 @@ export const workdata=[
       "Siri integration for communication outside the app interface",
       "Image and voice recording attachments" 
     ]
+    ,
+
+ url:"#digital-communication-channel"
    
    },
    {
@@ -31,6 +38,9 @@ export const workdata=[
       "Space usage calculation for storage facilities",
       "Predefined and dimensions for load allocation" 
     ]
+    ,
+
+ url:"#space-optimization-solution"
    
    },
    {
@@ -41,7 +51,9 @@ export const workdata=[
       "Energy consumption forcasting with a dynamic formula",
       "Visualized user consumption trends via clear charts and tablets",
       "Integration with PowerCloud for smooth data transmission and storage" 
-    ]
+    ],
+
+    url:"#enery-consumption-management"
    
    }
 ]
