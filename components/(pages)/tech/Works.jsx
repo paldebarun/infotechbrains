@@ -1,6 +1,6 @@
 "use client";
 import { workdata } from "../../../data/workdata";
-import React, { useRef, useState } from "react";
+import React, { forwardRef, useRef, useState } from "react";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -8,33 +8,95 @@ import { GoArrowDownRight } from "react-icons/go";
 import "swiper/css";
 import "swiper/css/pagination";
 import { FreeMode } from "swiper/modules";
+const Button = forwardRef(function Index( props , ref ){
+  const { goToNextSlide, goToPreviousSlide, isBeginning, isEnd } = props;
 
+  // Apply conditional styling based on isBeginning and isEnd
+  const prevButtonStyle = isBeginning ? 'opacity-50 cursor-not-allowed' : 'opacity-100';
+  const nextButtonStyle = isEnd ? 'opacity-50 cursor-not-allowed' : 'opacity-100';
+   return (
+     <div className="flex   py-10 px-7 md:px-0 md:py-0 items-start  flex-row gap-6 z-50">
+     {/* {!swiper || !swiper.current.isPrev ? ( */}
+         <button 
+          onClick={goToPreviousSlide}
+          className={`${prevButtonStyle} w-12 h-12 rounded-full border hover:text-orange-400 hover:border-orange-400 text-slate-400}`}
+          disabled={isBeginning}
+          >
+           <svg
+             xmlns="http://www.w3.org/2000/svg"
+             width="24"
+             height="24"
+             viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             strokeWidth="1"
+             strokeLinecap="round"
+             strokeLinejoin="round"
+             className="w-12 h-12 rounded-full border hover:text-orange-400 hover:border-orange-400 text-slate-400"
+           >
+             <path d="m15 18-6-6 6-6" />
+           </svg>
+         </button>
+       {/* ) : null} */}
+     
+       {/* {!swiper || !swiper.current.isNext ? ( */}
+         <button onClick={goToNextSlide}
+        className={`${nextButtonStyle} w-12 h-12 rounded-full border hover:text-orange-400 hover:border-orange-400 text-slate-400}`}
+        disabled={isEnd}>
+           <svg
+             xmlns="http://www.w3.org/2000/svg"
+             width="24"
+             height="24"
+             viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             strokeWidth="1"
+             strokeLinecap="round"
+             strokeLinejoin="round"
+             className="w-12 h-12 rounded-full border hover:text-orange-400 hover:border-orange-400 text-slate-400"
+           >
+             <path d="m9 18 6-6-6-6" />
+           </svg>
+         </button>
+       {/* ) : null} */}
+     </div>
+   );
+ })
+ 
 
 const Works = () => {
   const swiperRef = useRef(null);
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
 
   const goToNextSlide = () => {
-    if(swiperRef.current){
-      swiperRef.current.slideNext()
-    }
-  }
+    swiperRef.current?.slideNext();
+  };
 
   const goToPreviousSlide = () => {
-    if(swiperRef.current){
-      swiperRef.current.slidePrev();
-    }
-  }
+    swiperRef.current?.slidePrev();
+  };
+
+  const updateSwiperStatus = () => {
+    setIsBeginning(swiperRef.current.isBeginning);
+    setIsEnd(swiperRef.current.isEnd);
+  };
 
   return (
-    <section className="w-full bg-gray-900 py-7 px-5 relative">
-      <p className=" w-full text-3xl md:text-5xl text-white px-6">
+    <section className="w-full bg-[#1c1e24] py-16 px-5 relative">
+    <div className="flex md:flex-row flex-col justify-between w-full items-start md:items-center ">
+      <p className="  text-3xl md:text-5xl text-white px-6">
         SOME OF <span className="text-orange-500">OUR WORKS</span>
       </p>
+      <Button goToNextSlide={goToNextSlide}
+        goToPreviousSlide={goToPreviousSlide}
+        isBeginning={isBeginning}
+        isEnd={isEnd} />
+      </div>
+       <div className="h-full absolute w-20 sm:w-36  right-0 top-0 z-10 bg-gradient-to-l from-[#1c1e24]"></div>
+      
+      <div className="py-6 md:py-20 ">
 
-      <div className="absolute bg-gradient-to-r from-gray-900 w-16 top-0 z-50 h-full left-0"></div>
-      <Button goToNextSlide = {goToNextSlide} goToPreviousSlide = {goToPreviousSlide} />
-      <div className="py-20">
- 
         <Swiper
           spaceBetween={0}
           freeMode={true}
@@ -43,7 +105,7 @@ const Works = () => {
               slidesPerView: 1,
               spaceBetween: 0,
             },
-            820: {
+            700: {
               slidesPerView: 2,
               spaceBetween: 0,
             },
@@ -52,9 +114,13 @@ const Works = () => {
               spaceBetween: 0,
             },
           }}
-          onSwiper = {(swiper) => {swiperRef.current = swiper}}
+          onSwiper={(swiper) => { swiperRef.current = swiper }}
           modules={[FreeMode]}
-          className="flex flex-col"
+          onSlideChange = {updateSwiperStatus}
+          className="flex flex-col -translate-x-2 md:-translate-x-3"
+          style={{
+            overflow: "hidden",
+        }}
         >
 
 
@@ -62,11 +128,14 @@ const Works = () => {
             {workdata.map((work, index) => (
               <SwiperSlide
                 key={index}
-                className="group border group px-10  border-slate-400"
+                className="group border group p-7 md:p-10  border-slate-400"
               >
-                <a href={work.url} className="w-full h-auto ">
-                  <div className="text-white h-[600px] lg:h-[600px] px-3 sm:px-8 lg:px-10 py-16 flex flex-col gap-16">
-                    <p className="text-2xl md:text-3xl">{work.heading}</p>
+                <div className=" flex flex-col h-[40rem] gap-52 relative isolate w-full ">
+                  <div className="text-white h-[18rem] lg:h-[20rem] flex flex-col justify-between gap-16">
+                    <a href={work.url} className="text-2xl md:text-2xl">
+                      {work.heading}
+                      <span className=" absolute inset-0 h-full"></span>
+                    </a>
                     <ul className="flex flex-col gap-10 ">
                       {work.points.map((point, index) => (
                         <li
@@ -74,8 +143,7 @@ const Works = () => {
                           className=" list-square text-orange-400 "
                         >
                           <div className="flex w-full h-auto gap-3 items-center ">
-                            {/* <span className="w-3 box-border h-3  bg-orange-400"></span> */}
-                            {/* <FaSquareFull className="w-3 h-3 text-orange-400" /> */}
+                            
                             <span className="xl:text-xl md:text-md text-slate-300">
                               {point}
                             </span>
@@ -84,26 +152,17 @@ const Works = () => {
                       ))}
                     </ul>
                   </div>
-                  <div className="flex w-full justify-start  items-center py-10 sm:px-8 md:px-10">
-                    <p className="text-slate-300 text-sm sm:text-md md:text-lg ">
+                  <div className="flex justify-center sm:px-8 md:px-10">
+                    <p className="text-slate-300 font-semibold text-md sm:text-md md:text-lg ">
                       SEE FULL CASE STUDY
                     </p>
                     <GoArrowDownRight className="text-orange-400 w-6 h-6 group-hover:-rotate-90 group-hover:text-white transition-all duration-200" />
                   </div>
-                </a>
+                </div>
               </SwiperSlide>
             ))}
           </div>
         </Swiper>
-
-        {/* <div className="button-Arrangement absolute top-10 right-0">
-        <div className="button-swiper w-20 flex justify-between ">
-           <div className="swiper-button-prev "></div>
-           <div className="swiper-button-next"></div>
-           
-           
-        </div>
-      </div> */}
       </div>
     </section>
   );
@@ -112,44 +171,3 @@ const Works = () => {
 export default Works;
 
 
-const Button = ({goToNextSlide , goToPreviousSlide}) => {
-  // const swiper = useSwiper();
-
-  return (
-    <div className="flex md:absolute top-10 py-10 px-7 md:px-0 md:py-0 items-start right-10 flex-row gap-4 z-50">
-      <button onClick={goToNextSlide}>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="w-12 h-12 rounded-full border hover:text-orange-400 hover:border-orange-400 text-slate-400"
-        >
-          <path d="m15 18-6-6 6-6" />
-        </svg>
-      </button>
-
-      <button onClick={goToPreviousSlide}>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="w-12 h-12 rounded-full border hover:text-orange-400 hover:border-orange-400 text-slate-400"
-        >
-          <path d="m9 18 6-6-6-6" />
-        </svg>
-      </button>
-    </div>
-  );
-};

@@ -56,4 +56,18 @@ export const workdata=[
     url:"#enery-consumption-management"
    
    }
+   ,
+   {
+    heading:"ENERGY CONSUMPTION MANAGEMENT",
+   
+    points:[
+      
+      "Energy consumption forcasting with a dynamic formula",
+      "Visualized user consumption trends via clear charts and tablets",
+      "Integration with PowerCloud for smooth data transmission and storage" 
+    ],
+
+    url:"#enery-consumption-management"
+   
+   }
 ]
