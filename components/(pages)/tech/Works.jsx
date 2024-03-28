@@ -128,7 +128,7 @@ const Button = ({goToNextSlide , goToPreviousSlide}) => {
           strokeWidth="1"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="w-16 h-16 rounded-full border hover:text-orange-400 hover:border-orange-400 text-slate-400"
+          className="w-12 h-12 rounded-full border hover:text-orange-400 hover:border-orange-400 text-slate-400"
         >
           <path d="m15 18-6-6 6-6" />
         </svg>
@@ -145,7 +145,7 @@ const Button = ({goToNextSlide , goToPreviousSlide}) => {
           strokeWidth="1"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="w-16 h-16 rounded-full border hover:text-orange-400 hover:border-orange-400 text-slate-400"
+          className="w-12 h-12 rounded-full border hover:text-orange-400 hover:border-orange-400 text-slate-400"
         >
           <path d="m9 18 6-6-6-6" />
         </svg>
