@@ -11,12 +11,12 @@ import { FreeMode } from "swiper/modules";
 const Button = forwardRef(function Index( props , ref ){
   const { goToNextSlide, goToPreviousSlide, isBeginning, isEnd } = props;
 
-  // Apply conditional styling based on isBeginning and isEnd
+
   const prevButtonStyle = isBeginning ? 'opacity-50 cursor-not-allowed' : 'opacity-100';
   const nextButtonStyle = isEnd ? 'opacity-50 cursor-not-allowed' : 'opacity-100';
    return (
      <div className="flex   py-10 px-7 md:px-0 md:py-0 items-start  flex-row gap-6 z-50">
-     {/* {!swiper || !swiper.current.isPrev ? ( */}
+
          <button 
           onClick={goToPreviousSlide}
           className={`${prevButtonStyle} w-12 h-12 rounded-full border hover:text-orange-400 hover:border-orange-400 text-slate-400}`}
@@ -37,9 +37,7 @@ const Button = forwardRef(function Index( props , ref ){
              <path d="m15 18-6-6 6-6" />
            </svg>
          </button>
-       {/* ) : null} */}
-     
-       {/* {!swiper || !swiper.current.isNext ? ( */}
+    
          <button onClick={goToNextSlide}
         className={`${nextButtonStyle} w-12 h-12 rounded-full border hover:text-orange-400 hover:border-orange-400 text-slate-400}`}
         disabled={isEnd}>
@@ -58,7 +56,7 @@ const Button = forwardRef(function Index( props , ref ){
              <path d="m9 18 6-6-6-6" />
            </svg>
          </button>
-       {/* ) : null} */}
+    
      </div>
    );
  })
