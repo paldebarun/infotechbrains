@@ -82,14 +82,18 @@ const Works = () => {
 
   return (
     <section className="w-full bg-[#1c1e24] py-16 px-5 relative">
-    <div className="flex md:flex-row flex-col justify-between w-full items-start md:items-center ">
+    <div className="flex md:flex-row flex-col justify-between relative w-full items-start md:items-center ">
       <p className="  text-3xl md:text-5xl text-white px-6">
         SOME OF <span className="text-orange-500">OUR WORKS</span>
       </p>
-      <Button goToNextSlide={goToNextSlide}
+      <div className="md:w-auto w-full flex justify-start sm:justify-end">
+      <Button  goToNextSlide={goToNextSlide}
         goToPreviousSlide={goToPreviousSlide}
         isBeginning={isBeginning}
-        isEnd={isEnd} />
+        isEnd={isEnd} 
+        />
+      </div>
+      
       </div>
        <div className="h-full absolute w-20 sm:w-36  right-0 top-0 z-10 bg-gradient-to-l from-[#1c1e24]"></div>
       
@@ -99,11 +103,11 @@ const Works = () => {
           spaceBetween={0}
           freeMode={true}
           breakpoints={{
-            640: {
+            600: {
               slidesPerView: 1,
               spaceBetween: 0,
             },
-            700: {
+            650: {
               slidesPerView: 2,
               spaceBetween: 0,
             },
@@ -128,9 +132,9 @@ const Works = () => {
                 key={index}
                 className="group border group p-7 md:p-10  border-slate-400"
               >
-                <div className=" flex flex-col h-[40rem] gap-52 relative isolate w-full ">
-                  <div className="text-white h-[18rem] lg:h-[20rem] flex flex-col justify-between gap-16">
-                    <a href={work.url} className="text-2xl md:text-2xl">
+                <div className=" flex flex-col lg:h-[40rem] gap-52 relative isolate w-full ">
+                  <div className="text-white h-[12rem]  md:h-[20rem] gap-12  lg:h-[21rem]  flex flex-col justify-between lg:gap-16 ">
+                    <a href={work.url} className="text-[5vw] sm:text-[3vw] md:text-2xl">
                       {work.heading}
                       <span className=" absolute inset-0 h-full"></span>
                     </a>
@@ -142,7 +146,7 @@ const Works = () => {
                         >
                           <div className="flex w-full h-auto gap-3 items-center ">
                             
-                            <span className="xl:text-xl md:text-md text-slate-300">
+                            <span className="text-[3.5vw] sm:text-[1.9vw] xl:text-lg md:text-md text-slate-300">
                               {point}
                             </span>
                           </div>
@@ -150,11 +154,11 @@ const Works = () => {
                       ))}
                     </ul>
                   </div>
-                  <div className="flex justify-center sm:px-8 md:px-10">
-                    <p className="text-slate-300 font-semibold text-md sm:text-md md:text-lg ">
+                  <div className="flex justify-center items-center sm:px-8 md:px-10">
+                    <p className="text-slate-300 font-semibold text-md  md:text-[2vw] text-[3.5vw] sm:text-[1.5vw] lg:text-[1.3vw] xl:text-[1.2vw] ">
                       SEE FULL CASE STUDY
                     </p>
-                    <GoArrowDownRight className="text-orange-400 w-6 h-6 group-hover:-rotate-90 group-hover:text-white transition-all duration-200" />
+                    <GoArrowDownRight className="text-orange-400 w-7 h-7 group-hover:-rotate-90 group-hover:text-white transition-all duration-200" />
                   </div>
                 </div>
               </SwiperSlide>
