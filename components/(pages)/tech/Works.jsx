@@ -104,16 +104,22 @@ const Works = () => {
           freeMode={true}
           breakpoints={{
             600: {
+
               slidesPerView: 1,
               spaceBetween: 0,
+
             },
             650: {
+
               slidesPerView: 2,
               spaceBetween: 0,
+
             },
-            1200: {
-              slidesPerView: 3,
+            700: {
+
+              slidesPerView: 4,
               spaceBetween: 0,
+              
             },
           }}
           onSwiper={(swiper) => { swiperRef.current = swiper }}
@@ -124,7 +130,6 @@ const Works = () => {
             overflow: "hidden",
         }}
         >
-
 
           <div>
             {workdata.map((work, index) => (
@@ -149,6 +154,7 @@ const Works = () => {
                             <span className="text-[3.5vw] sm:text-[1.9vw] xl:text-lg md:text-md text-slate-300">
                               {point}
                             </span>
+
                           </div>
                         </li>
                       ))}
